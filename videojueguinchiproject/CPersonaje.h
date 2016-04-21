@@ -5,6 +5,10 @@ class CPersonaje
 {
 private:
 	enum m_eTipo{BASKET,VOLEY,HIPPIE,DESTRUYE,TUNO,EMPOLLON,PASOTA,CORDILLERAS,ETSIDIANTE,PROFSTANDARD,BOSS,OTROS};
+
+	//ARREGLAR EL PUTO ENUM ^
+				//          |
+
 	int m_iAtq_fis;
 	int m_iAtq_hab;
 	int m_iSalud;

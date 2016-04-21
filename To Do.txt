@@ -1,0 +1,3 @@
+Adrian: Implementar la clase Bonus
+
+Mario: revisar los constructores. Comentarios en el codigo.

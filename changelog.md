@@ -28,3 +28,7 @@ La clase cuenta con los siguientes métodos:
 	→ Moverse. Calcula la velocidad y mueve al personaje sobre el mapa.
 
 → Implementada clase “Posición” Para definir dos coordenadas en el mapa.
+
+
+_21/04/2016_
+Creación de la clase Objeto

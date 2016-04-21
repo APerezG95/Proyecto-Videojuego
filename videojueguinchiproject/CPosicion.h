@@ -4,7 +4,7 @@ class CPosicion
 {
 private:
 
-	
+	//TU MARIO TT HASME EL CONSTRUCTOR SIN ARGUMENTOS. VAMOS, UNO DE PODEMOS DEFENDIENDO SUS POLITICAS
 
 public:	//De momento pongo todo público para quitarnos de líos
 
