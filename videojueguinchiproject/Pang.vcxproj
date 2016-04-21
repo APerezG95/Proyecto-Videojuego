@@ -82,12 +82,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CBonus.cpp" />
     <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CPersonaje.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CBonus.h" />
     <ClInclude Include="CItem.h" />
     <ClInclude Include="CPosicion.h" />
     <ClInclude Include="CPersonaje.h" />

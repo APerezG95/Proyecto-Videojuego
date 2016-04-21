@@ -32,3 +32,5 @@ La clase cuenta con los siguientes métodos:
 
 _21/04/2016_
 Creación de la clase Objeto
+Decisión de limitar a 1 ítem por personaje jugable.
+Creación de la clase Bonus. //No me entero de nada

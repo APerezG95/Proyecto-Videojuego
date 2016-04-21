@@ -1,5 +1,6 @@
 #pragma once
 #include "CPosicion.h"
+#include "CItem.h"
 
 class CPersonaje
 {
@@ -8,14 +9,13 @@ private:
 
 	//ARREGLAR EL PUTO ENUM ^
 				//          |
-
+	CItem m_Obj;
 	int m_iAtq_fis;
 	int m_iAtq_hab;
 	int m_iSalud;
 	int m_iDef_fis;
 	int m_iDef_hab;
 	int m_iDolor;		//daño recibido antes de la reducción por los stats de defensa
-	enum m_eBonus{};	//Bonuses por definir
 	int m_iVel;			//numero de movimientos por turno
 	int m_iBando;		//aliados=1 enemigos=0                       
 	int m_iNivel;
