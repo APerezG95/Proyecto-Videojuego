@@ -28,10 +28,10 @@ bool CPersonaje::Moverse(CPosicion input)
 	int pos_max_y = m_iVel + m_Pos.y;
 
 	if ((pos_max_x < input.x) || (pos_max_y < input.y))	//posible sobrecarga de operador <
-		return -1;
+		return 0;
 
 	m_Pos = input;
-	return 0;
+	return 1;
 
 
 }
