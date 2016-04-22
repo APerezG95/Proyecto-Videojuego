@@ -1,18 +1,17 @@
 Adrian: 
-	--> Implementar la clase CBonus. 
-	--> Darle a Mario besis en el glande. 
-	--> Implementar la clase (duro con ello).
+	--> Implementar la clase CBonus.
+	--> Implementar la clase CAtaque(espera para hacer esto).
 
 
 Mario: 
 	--> Revisar los constructores.
-	--> Implementar la función Actualizar para renovar las stats del personaje. 
+	--> Implementar la funciÃ³n Actualizar para renovar las stats del personaje. 
 	--> Comentarios en el codigo.
 	--> Modificar con el concepto de herencia la clase personaje para adecuarla a los distintos tipos.
 	--> Tipos: BASKET, VOLEY, HIPPIE, DESTRUYE, TUNO, EMPOLLON, PASOTA, CORDILLERAS, ETSIDIANTE, PROFSTANDARD, BOSS, OTROS.
-	--> Cuando acabe Adri de tocar la clase CItem completa, implementar la función Añadir_Buff
-	--> Revisar la reserva dinámica de la clase CMapa, no me fío.
+	--> Cuando acabe Adri de tocar la clase CItem completa, implementar la funciÃ³n AÃ±adir_Buff
+	--> Revisar la reserva dinÃ¡mica de la clase CMapa, no me fÃ­o.
 
 
 Ideinchis:
-	-->¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?
+	-->Â¿Hacemos la sobrecarga del operador "<" y ">" para hacer mÃ¡s cÃ³modo el sistema de coordenadas?
