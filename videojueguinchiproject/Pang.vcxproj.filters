@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Mundo.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="src\Pang.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -30,11 +27,11 @@
     <ClCompile Include="CBonus.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="CMapa.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Mundo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="CPosicion.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -45,6 +42,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="CBonus.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="CMapa.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

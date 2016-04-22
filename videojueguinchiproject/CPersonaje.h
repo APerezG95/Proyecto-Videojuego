@@ -1,3 +1,15 @@
+/*    .-----------------------------------------------------------------.    */
+/*   /  .-.                                                         .-.  \   */
+/*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
+/*  | |\_.  |                                                     |    /| |  */
+/*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
+/*  | `---' |                                                     | `---' |  */
+/*  |       |         Fecha Última Modificación: 22/04/2016       |       |  */
+/*  |       |-----------------------------------------------------|       |  */
+/*  \       |                                                     |       /  */
+/*   \     /                                                       \     /   */
+/*    `---'                                                         `---'    */
+
 #pragma once
 #include "CPosicion.h"
 #include "CItem.h"
@@ -5,29 +17,28 @@
 class CPersonaje
 {
 private:
-	enum m_eTipo{BASKET,VOLEY,HIPPIE,DESTRUYE,TUNO,EMPOLLON,PASOTA,CORDILLERAS,ETSIDIANTE,PROFSTANDARD,BOSS,OTROS};
-
-	//ARREGLAR EL PUTO ENUM ^
-				//          |
-	CItem m_Obj;
-	int m_iAtq_fis;
-	int m_iAtq_hab;
-	int m_iSalud;
-	int m_iDef_fis;
-	int m_iDef_hab;
-	int m_iDolor;		//daño recibido antes de la reducción por los stats de defensa
-	int m_iVel;			//numero de movimientos por turno
-	int m_iBando;		//aliados=1 enemigos=0                       
-	int m_iNivel;
-	CPosicion m_Pos;
-	int m_iAguante;		//aguante es equivalente al maná
+	CItem m_Obj;		//Variable para almacenar las características del objeto
+	bool m_bObjOn;		//Variable de comprobación
+	int m_iAtq_fis;		//Ataque directo o físico. Estadística base del personaje
+	int m_iAtq_hab;		//Ataque de habilidad
+	int m_iSaludMax;	//Puntos de daño total que es capaz de soportar
+	int m_iSalud;		//Puntos de salud actuales
+	float m_iDef_fis;	//Valor porcentual de reducción de daño físico recibido
+	float m_iDef_hab;	//Valor porcentual de reducción de daño de habilidad recibido
+	int m_iVel;			//Número de casillas máximo que es capaz de moverse el personaje
+	bool m_iBando;		//aliados=1 enemigos=0                       
+	int m_iNivel;		//Número que representa la cantidad de experiencia recibida y determina sus atributos
+	CPosicion m_Pos;	//Posición actual del personaje
+	int m_iAguante;		//Puntos de aguante actuales
+	int m_iAguanteMax;	//Puntos máximos de aguante, permiten lanzar ataques de habilidad
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
 
 public:
-	CPersonaje(); //Requiere inicialización explícita en función del tipo
-	int Atacar(int consumo=0, bool tipodaño=0, int proporcion=1);	//Tipodaño 0 para físico y 1 para habilidad. Proporción es el daño de la habilidad
+	CPersonaje();												    //Requiere inicialización explícita en función del tipo
+	int Atacar(int consumo=0, bool tipodaño=0, int daño_base=1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
 	int Defender(int dmg, bool tipodaño=0);
 	void Actualizar();
 	bool Moverse(CPosicion input);
+	void Añadir_Buff();
 
 };

@@ -85,15 +85,15 @@
     <ClCompile Include="CBonus.cpp" />
     <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CPersonaje.cpp" />
-    <ClCompile Include="src\Mundo.cpp" />
+    <ClCompile Include="CMapa.cpp" />
     <ClCompile Include="src\Pang.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBonus.h" />
     <ClInclude Include="CItem.h" />
+    <ClInclude Include="CMapa.h" />
     <ClInclude Include="CPosicion.h" />
     <ClInclude Include="CPersonaje.h" />
-    <ClInclude Include="src\Mundo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

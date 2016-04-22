@@ -34,3 +34,22 @@ _21/04/2016_
 Creación de la clase Objeto
 Decisión de limitar a 1 ítem por personaje jugable.
 Creación de la clase Bonus. //No me entero de nada
+
+_22/04/2016_
+Modificaciones a la clase CPersonaje:
+	--> Eliminada la variable enum con vistas a implementar una serie de clases heredadas.
+	--> Cambiado el tipo de datos de defensas a float (valor porcentual).
+	--> Eliminada la variable "Dolor" (hasta que sepamos para qué servía).
+	--> Añadidos comentarios para que no nos pase más lo de la variable "Dolor".
+	--> Añadidas las variables salud y aguante máximo para comprobar la comparativa entre lo actual y lo total.
+	--> La variable m_iBando ahora es bool.
+	--> Añadidas las cabeceras de los archivos.
+	--> Corregidas las funciones ya implementadas para los cambios anteriores.
+	--> Declarada la función Añadir_Buff para renovar el efecto del objeto obtenido (por definir).
+	--> Añadida la variable m_bObjOn para comprobar si se ha aplicado o no el buff del objeto.
+
+Resto de modificaciones:
+	--> Añadida la clase CMapa.
+	--> Creada la matriz de la clase CMapa, constructor y destructor de memoria dinámica.
+	--> Implementado el tipo de enum m_eEnte para saber qué hay en cada celda.
+
