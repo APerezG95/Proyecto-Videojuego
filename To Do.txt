@@ -1,4 +1,4 @@
-Adrian: 
+﻿Adrian: 
 	--> Implementar la clase CBonus.
 	--> Implementar la clase CAtaque(espera para hacer esto).
 
@@ -6,11 +6,12 @@ Adrian:
 Mario: 
 	--> Revisar los constructores.
 	--> Implementar la función Actualizar para renovar las stats del personaje. 
-	--> Comentarios en el codigo.
 	--> Modificar con el concepto de herencia la clase personaje para adecuarla a los distintos tipos.
 	--> Tipos: BASKET, VOLEY, HIPPIE, DESTRUYE, TUNO, EMPOLLON, PASOTA, CORDILLERAS, ETSIDIANTE, PROFSTANDARD, BOSS, OTROS.
 	--> Cuando acabe Adri de tocar la clase CItem completa, implementar la función Añadir_Buff
 	--> Revisar la reserva dinámica de la clase CMapa, no me fío.
+	--> Polimorfismo FUAAA.
+	--> Revisar la función inicializa por referencia
 
 
 Ideinchis:

@@ -16,7 +16,7 @@
 
 class CPersonaje
 {
-private:
+protected:
 	CItem m_Obj;		//Variable para almacenar las características del objeto
 	bool m_bObjOn;		//Variable de comprobación
 	int m_iAtq_fis;		//Ataque directo o físico. Estadística base del personaje
@@ -34,9 +34,9 @@ private:
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
 
 public:
-	CPersonaje();												    //Requiere inicialización explícita en función del tipo
-	int Atacar(int consumo=0, bool tipodaño=0, int daño_base=1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
-	int Defender(int dmg, bool tipodaño=0);
+	virtual void Inicializa(CPersonaje&) {};								//Requiere inicialización explícita en función del tipo
+	virtual int Atacar(int consumo=0, bool tipodaño=0, int daño_base=1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
+	virtual int Defender(int dmg, bool tipodaño=0);
 	void Actualizar();
 	bool Moverse(CPosicion input);
 	void Añadir_Buff();

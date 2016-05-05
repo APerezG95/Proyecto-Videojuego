@@ -12,6 +12,8 @@
 
 #include "CPersonaje.h"
 
+
+
 int CPersonaje::Atacar(int consumo, bool tipodaño, int proporcion)
 {
 	if (tipodaño == 0)					//Daño físico
@@ -32,6 +34,10 @@ int CPersonaje::Defender(int dmg, bool tipodaño)
 	else
 		return (dmg - dmg*m_iDef_hab);	//Daño de habil, idem con la defensa de habil.
 
+}
+
+void CPersonaje::Actualizar()
+{
 }
 
 bool CPersonaje::Moverse(CPosicion input)

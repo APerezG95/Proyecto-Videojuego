@@ -53,3 +53,9 @@ Resto de modificaciones:
 	--> Creada la matriz de la clase CMapa, constructor y destructor de memoria dinámica.
 	--> Implementado el tipo de enum m_eEnte para saber qué hay en cada celda.
 
+
+_05/05/2016_
+	--> Constructor "por defecto" de la clase CItem (Siempre necesita un objeto de tipo CBonus).
+	--> Constructor por defecto de la clase CPosicion.
+	--> Función de inicialización virtual de CPersonaje.
+	--> Inicialización de la clase CBasket (por retocar).
