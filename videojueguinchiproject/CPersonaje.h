@@ -2,7 +2,7 @@
 /*   /  .-.                                                         .-.  \   */
 /*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
 /*  | |\_.  |                                                     |    /| |  */
-/*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
+/*  |\|  | /|         Autor: Mario Pedraza Esteban es gay         |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
 /*  |       |         Fecha Última Modificación: 22/04/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
@@ -18,7 +18,8 @@ class CPersonaje
 {
 protected:
 	CItem m_Obj;		//Variable para almacenar las características del objeto
-	bool m_bObjOn;		//Variable de comprobación
+	bool m_bObjDisp;	//Variable para saber si tengo un objeto o no. 0 para tengo objeto, 1 para no tengo objeto
+	bool m_bObjOn;		//Variable de comprobación. 0 para buff no aplicado, 1 para buff aplicado
 	int m_iAtq_fis;		//Ataque directo o físico. Estadística base del personaje
 	int m_iAtq_hab;		//Ataque de habilidad
 	int m_iSaludMax;	//Puntos de daño total que es capaz de soportar
@@ -40,5 +41,6 @@ public:
 	void Actualizar();
 	bool Moverse(CPosicion input);
 	void Añadir_Buff();
+	bool Recoger_Objeto(CItem item);
 
 };

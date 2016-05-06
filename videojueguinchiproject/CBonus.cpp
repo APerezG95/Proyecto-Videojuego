@@ -6,6 +6,12 @@ CBonus::CBonus(m_eTipo tipo, int bonus)
 	Tipo = tipo;
 }
 
+CBonus::CBonus() {
+	m_iBonus = 0;
+	Tipo = SALUD;
+
+}
+
 CBonus::m_eTipo CBonus::getType()
 {
 	return Tipo;

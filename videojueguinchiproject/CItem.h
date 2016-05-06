@@ -11,7 +11,7 @@ private:
 	CPosicion m_Pos;
 public:
 	CItem(char* name, CPosicion Pos, CBonus bonus);
-	CItem(CBonus);
+	CItem(CBonus);                                  //Nombre en blanco y posicion (0,0)
 	
 };
 

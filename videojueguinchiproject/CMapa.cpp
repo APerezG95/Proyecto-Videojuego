@@ -12,6 +12,7 @@
 
 #include "CMapa.h"
 
+
 CMapa::CMapa(int sizex, int sizey) //En principio inicializamos todas las casillas a NADA
 	:m_iSizex(sizex),
 	m_iSizey(sizey)
@@ -38,4 +39,14 @@ CMapa::~CMapa()
 		delete[] m_eBoard[i];
 	}
 	delete[] m_eBoard;
+}
+
+CMapa::m_eEnte CMapa::ComprobarContenido(int x, int y) {
+	return m_eBoard[x][y];
+}
+
+void CMapa::ActualizarMapa(int x, int y, CMapa::m_eEnte estado){
+	
+	m_eBoard[x][y] = estado;
+
 }

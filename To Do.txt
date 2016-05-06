@@ -1,7 +1,10 @@
 ﻿Adrian: 
 	--> Implementar la clase CBonus.
 	--> Implementar la clase CAtaque(espera para hacer esto).
-
+	-->Implementar método de destrucción de objeto. Se le llamaría al recogerlo
+	-->Hay que añadir la clase personaje al mundo, o hacer include del personaje al mundo para la funcion moverse.
+	No estoy seguro
+	-->Mirar errores de las llamadas a las funciones de CMapa en la funcion moverse
 
 Mario: 
 	--> Revisar los constructores.
