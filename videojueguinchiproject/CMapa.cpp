@@ -35,7 +35,7 @@ CMapa::CMapa(int sizex, int sizey) //En principio inicializamos todas las casill
 
 CMapa::~CMapa()
 {
-	for (int i = 0; i<m_iSizey; i++) {
+	for (int i = 0; i < m_iSizey; i++) {
 		delete[] m_eBoard[i];
 	}
 	delete[] m_eBoard;

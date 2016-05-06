@@ -61,9 +61,9 @@ _05/05/2016_
 	--> Inicialización de la clase CBasket (por retocar).
 
 _06/05/2016_
-	-->Implementado el metodo moverse del personaje. Comprueba que la posición deseada está en el rango del personaje,
-	comprueba si hay algún tipo de obstáculo y si hay un objeto llama a la función que lo recoge.
-	-->Añadido método Recoger_Objeto al personaje. Lo recoge y llama a la funcion aplicar buff (todavia por implementar).
-	-->Añadido metodo ComprobarContenido al mapa que retorna lo que hay en una casilla. Usada en la funcion moverse
-	-->No se podrá mover a una casilla donde haya un objeto si ya tienes uno.
-	-->Añadida funcion ActualizarMapa
+	--> Implementado el metodo moverse del personaje. Comprueba que la posición deseada está en el rango del personaje,
+	    comprueba si hay algún tipo de obstáculo y si hay un objeto llama a la función que lo recoge.(por retocar)
+	--> Añadido método Recoger_Objeto al personaje. Lo recoge y llama a la funcion aplicar buff (todavia por implementar).
+	--> Añadido metodo ComprobarContenido al mapa que retorna lo que hay en una casilla. Usada en la funcion moverse
+	--> No se podrá mover a una casilla donde haya un objeto si ya tienes uno.
+	--> Añadida funcion ActualizarMapa

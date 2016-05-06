@@ -16,6 +16,8 @@ Mario:
 	--> Polimorfismo FUAAA.
 	--> Revisar la función inicializa por referencia
 
+OTROS:
+	--> Cambiar mapa para que tenga un objeto de cada tipo (lo que puede contener).
 
 Ideinchis:
 	-->¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?
