@@ -4,25 +4,27 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 22/04/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 07/05/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
 /*    `---'                                                         `---'    */
 
 #pragma once
-
+#include "CPersonaje.h"
+#include "CItem.h"
+#include "CEnte.h"
 
 class CMapa
 {
 public:
-	enum m_eEnte { PERSONAJE, OBJETO, OBSTACULO, NADA, INACCESIBLE };	//Distintos tipos de cosas que puede contener el mapa
 	CMapa(int sizex, int sizey);
 	~CMapa();
-	m_eEnte ComprobarContenido(int x, int y);
-	void ActualizarMapa(int x, int y, m_eEnte estado);
+	CEnte ComprobarContenido(int x, int y);
+	void ActualizarMapa(int x, int y, CEnte::m_eTipo estado);
+
 private:
-	m_eEnte ** m_eBoard;	//Definimos la matriz que contiene el mapa
-	int m_iSizey, m_iSizex;
+	CEnte ** m_Board;		//Definimos la matriz que contiene el mapa
+	int m_iSizey, m_iSizex;	//Maximas dimensiones del mapa
 
 };

@@ -4,7 +4,7 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 22/04/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 07/05/2016       |       |  */
 /*  |       |---------------------------------------------------- |       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -48,24 +48,32 @@ bool CPersonaje::Moverse(CPosicion input, CMapa map)
 	if ((pos_max_x < input.x) || (pos_max_y < input.y))	//posible sobrecarga de operador <
 		return 0;						//Error, no se puede mover tan lejos
 
-	if (map.ComprobarContenido(input.x,input.y) == CMapa::m_eEnte::NADA) {		//Si en la pos no hay nada, se mueve
+	if ((map.ComprobarContenido(input.x,input.y)).m_Type == CEnte::NADA) //Si en la pos no hay nada, se mueve
+	{		
+		map.ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);	//Colocamos al personaje
+		map.ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
 		m_Pos = input;
-		map.ActualizarMapa(input.x, input.y, CMapa::PERSONAJE);
 		return 1;	
 	}
-	if (map.ComprobarContenido(input.x, input.y) == CMapa::OBJETO) {		//Si en la pos hay un objeto, se mueve y (si puede) lo recoje
-		if(/*Recoger_Objeto(i)*/1)
+
+	if ((map.ComprobarContenido(input.x, input.y)).m_Type == CEnte::ITEM)
+	{		//Si en la pos hay un objeto, si puede se mueve y lo recoje
+		if(m_bObjDisp)
 		{
+			Recoger_Objeto(map.ComprobarContenido(input.x, input.y));	//Ojo, aquí problema
+			map.ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);
+			map.ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
 			m_Pos = input;
-			map.ActualizarMapa(input.x, input.y, CMapa::PERSONAJE);
 			return 1;
 		}
-		else return 0;			//Había un objeto, pero como ya tenia uno no ha podido recogerlo
-		
+		else return 0;			//Había un objeto y ya tiene uno, no puede moverse
 	}
 	
-	return 0;										//En la posición hay algún tipo de obstaculo. No se puede mover
+	if ((map.ComprobarContenido(input.x, input.y)).m_Type == CEnte::INACCESIBLE)	//En la posición hay algún tipo de obstaculo. No se puede mover
+		return 0;
 
+	if ((map.ComprobarContenido(input.x, input.y)).m_Type == CEnte::PERSONAJE)	//Ya hay un personaje en esa casilla, no puedes moverte.
+		return 0;
 
 }
 
@@ -78,17 +86,11 @@ void CPersonaje::Añadir_Buff()
 	}
 }
 
-bool CPersonaje::Recoger_Objeto(CItem item)
+void CPersonaje::Recoger_Objeto(CItem item)
 {
-	if (!m_bObjDisp) 
-		return 0; 					//ya tiene un objeto, no se ha podido recoger
-	else
-	{
 		m_Obj = item;
-		m_bObjDisp = 1;				//cambiamos el estado de disponibilidad de objeto tras recogerlo
+		m_bObjDisp = false;				//cambiamos el estado de disponibilidad de objeto tras recogerlo
 		Añadir_Buff();
-		return 1;					//el objeto se ha recogido
-	}
 }
 
 //Falta la función actualizar y posiblemente el constructor

@@ -1,23 +1,18 @@
 ﻿Adrian: 
 	--> Implementar la clase CBonus.
 	--> Implementar la clase CAtaque(espera para hacer esto).
-	-->Implementar método de destrucción de objeto. Se le llamaría al recogerlo
-	-->Hay que añadir la clase personaje al mundo, o hacer include del personaje al mundo para la funcion moverse.
-	No estoy seguro
-	-->Mirar errores de las llamadas a las funciones de CMapa en la funcion moverse
+	--> Implementar método de destrucción de objeto. Se le llamaría al recogerlo.
+	--> Hay que añadir la clase personaje al mundo, o hacer include del personaje al mundo para la funcion moverse. (DONE CON LA CLASE CENTE).
+	--> Mirar errores de las llamadas a las funciones de CMapa en la funcion moverse.
 
 Mario: 
-	--> Revisar los constructores.
-	--> Implementar la función Actualizar para renovar las stats del personaje. 
-	--> Modificar con el concepto de herencia la clase personaje para adecuarla a los distintos tipos.
-	--> Tipos: BASKET, VOLEY, HIPPIE, DESTRUYE, TUNO, EMPOLLON, PASOTA, CORDILLERAS, ETSIDIANTE, PROFSTANDARD, BOSS, OTROS.
-	--> Cuando acabe Adri de tocar la clase CItem completa, implementar la función Añadir_Buff
-	--> Revisar la reserva dinámica de la clase CMapa, no me fío.
-	--> Polimorfismo FUAAA.
-	--> Revisar la función inicializa por referencia
-
-OTROS:
-	--> Cambiar mapa para que tenga un objeto de cada tipo (lo que puede contener).
+	--> Revisar los constructores (individualizar para cada clase).
+	--> Implementar la función Actualizar para renovar las stats del personaje.
+	--> Implementar las clases heredadas de los tipos de personaje.
+	--> Cuando acabe Adri de tocar la clase CItem completa, implementar la función Añadir_Buff.
+	--> Revisar la función inicializa por referencia.
+	--> Añadir las clases CObstaculo, CNada y CInaccesible para complementar la clase mapa.
+	--> Modificar la función moverse.
 
 Ideinchis:
 	-->¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?

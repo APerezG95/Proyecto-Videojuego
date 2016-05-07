@@ -4,7 +4,7 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 22/04/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 07/05/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -14,8 +14,9 @@
 #include "CPosicion.h"
 #include "CItem.h"
 #include "CMapa.h"
+#include "CEnte.h"
 
-class CPersonaje
+class CPersonaje: public CEnte
 {
 protected:
 	CItem m_Obj;		//Variable para almacenar las características del objeto
@@ -30,7 +31,6 @@ protected:
 	int m_iVel;			//Número de casillas máximo que es capaz de moverse el personaje
 	bool m_iBando;		//aliados=1 enemigos=0                       
 	int m_iNivel;		//Número que representa la cantidad de experiencia recibida y determina sus atributos
-	CPosicion m_Pos;	//Posición actual del personaje
 	int m_iAguante;		//Puntos de aguante actuales
 	int m_iAguanteMax;	//Puntos máximos de aguante, permiten lanzar ataques de habilidad
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
@@ -42,6 +42,6 @@ public:
 	void Actualizar();
 	bool Moverse(CPosicion input, CMapa map);
 	void Añadir_Buff();
-	bool Recoger_Objeto(CItem item);
+	void Recoger_Objeto(CItem item);
 
 };

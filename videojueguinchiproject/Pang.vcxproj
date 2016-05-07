@@ -87,6 +87,7 @@
     <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CPersonaje.cpp" />
     <ClCompile Include="CMapa.cpp" />
+    <ClCompile Include="CEnte.cpp" />
     <ClCompile Include="src\Pang.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +97,7 @@
     <ClInclude Include="CMapa.h" />
     <ClInclude Include="CPosicion.h" />
     <ClInclude Include="CPersonaje.h" />
+    <ClInclude Include="CEnte.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
