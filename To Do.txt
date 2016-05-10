@@ -16,3 +16,4 @@ Mario:
 
 Ideinchis:
 	-->¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?
+	--> recoger un bacon queso
