@@ -13,6 +13,7 @@ Mario:
 	--> Revisar la función inicializa por referencia.
 	--> Añadir las clases CObstaculo, CNada y CInaccesible para complementar la clase mapa.
 	--> Modificar la función moverse.
+	--> !!!!Acaba la movida de añadir buff pls.
 
 Ideinchis:
 	-->¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?

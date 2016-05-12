@@ -68,7 +68,7 @@ _06/05/2016_
 	--> No se podrá mover a una casilla donde haya un objeto si ya tienes uno.
 	--> Añadida funcion ActualizarMapa.
 
--07/05/2016_
+_07/05/2016_
 	--> Cambiada la clase mapa, ya no utiliza enum sino objetos de cada tipo y un enum para que cada objeto sepa qué tipo es.
 	--> Implementada la función recoger objeto para personajes (No tiene comprobación propia, debe hacerse fuera!).
 	--> Corregidos todos los problemas del cambio anterior.
@@ -77,7 +77,8 @@ _06/05/2016_
 	--> Retocada la función Moverse de CPersonaje (aun por terminar).
 
 
-
+_11/05/2016_
+	--> Modificada la función Añadir_Buff para que reciba un objeto del tipo CItem.
 
 
 

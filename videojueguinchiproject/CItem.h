@@ -20,10 +20,10 @@
 
 class CItem: public CEnte
 {
-private:
-	CBonus m_Bonus;               
+private:         
 	char m_sName[MAX_NOM];
 public:
+	CBonus m_Bonus;
 	CItem(char* name, CPosicion Pos, CBonus bonus);
 	CItem(CBonus);                                  //Nombre en blanco y posicion (0,0)
 	

@@ -64,6 +64,7 @@ bool CPersonaje::Moverse(CPosicion input, CMapa map)
 			map.ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);
 			map.ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
 			m_Pos = input;
+
 			return 1;
 		}
 		else return 0;			//Había un objeto y ya tiene uno, no puede moverse
@@ -77,11 +78,17 @@ bool CPersonaje::Moverse(CPosicion input, CMapa map)
 
 }
 
-void CPersonaje::Añadir_Buff()
+void CPersonaje::Añadir_Buff(CItem item)
 {
 	if (!m_bObjOn)
 	{
-		//Meter aquí la función item para calcular el buff y meterlo al personaje.
+		switch (item.m_Bonus.getType())	//EnTUBOCA EL SWITCH
+		{
+		case CBonus::SALUD:
+		{
+			//ACABELO WEY
+		}
+		}
 		m_bObjOn = true;
 	}
 }
@@ -90,7 +97,7 @@ void CPersonaje::Recoger_Objeto(CItem item)
 {
 		m_Obj = item;
 		m_bObjDisp = false;				//cambiamos el estado de disponibilidad de objeto tras recogerlo
-		Añadir_Buff();
+		Añadir_Buff(item);
 }
 
 //Falta la función actualizar y posiblemente el constructor
