@@ -4,7 +4,7 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 07/05/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 13/05/2016       |       |  */
 /*  |       |---------------------------------------------------- |       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -40,7 +40,7 @@ void CPersonaje::Actualizar()
 {
 }
 
-bool CPersonaje::Moverse(CPosicion input, CMapa map)
+bool CPersonaje::Moverse(CPosicion input, CMapa* map)
 {
 	int pos_max_x = m_iVel + m_Pos.x;	//Posición máxima a la que se puede mover en x
 	int pos_max_y = m_iVel + m_Pos.y;	//Posición máxima a la que se puede mover en y
@@ -48,21 +48,21 @@ bool CPersonaje::Moverse(CPosicion input, CMapa map)
 	if ((pos_max_x < input.x) || (pos_max_y < input.y))	//posible sobrecarga de operador <
 		return 0;						//Error, no se puede mover tan lejos
 
-	if ((map.ComprobarContenido(input.x,input.y)).m_Type == CEnte::NADA) //Si en la pos no hay nada, se mueve
+	if ((map->ComprobarContenido(input.x,input.y)).m_Type == CEnte::NADA) //Si en la pos no hay nada, se mueve
 	{		
-		map.ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);	//Colocamos al personaje
-		map.ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
+		map->ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);	//Colocamos al personaje
+		map->ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
 		m_Pos = input;
 		return 1;	
 	}
 
-	if ((map.ComprobarContenido(input.x, input.y)).m_Type == CEnte::ITEM)
+	if ((map->ComprobarContenido(input.x, input.y)).m_Type == CEnte::ITEM)
 	{		//Si en la pos hay un objeto, si puede se mueve y lo recoje
 		if(m_bObjDisp)
 		{
-			Recoger_Objeto(map.ComprobarContenido(input.x, input.y));	//Ojo, aquí problema
-			map.ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);
-			map.ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
+			Recoger_Objeto(&map->ComprobarContenido(input.x, input.y));	//Ojo, aquí problema
+			map->ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);
+			map->ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
 			m_Pos = input;
 
 			return 1;
@@ -70,10 +70,10 @@ bool CPersonaje::Moverse(CPosicion input, CMapa map)
 		else return 0;			//Había un objeto y ya tiene uno, no puede moverse
 	}
 	
-	if ((map.ComprobarContenido(input.x, input.y)).m_Type == CEnte::INACCESIBLE)	//En la posición hay algún tipo de obstaculo. No se puede mover
+	if ((map->ComprobarContenido(input.x, input.y)).m_Type == CEnte::INACCESIBLE)	//En la posición hay algún tipo de obstaculo. No se puede mover
 		return 0;
 
-	if ((map.ComprobarContenido(input.x, input.y)).m_Type == CEnte::PERSONAJE)	//Ya hay un personaje en esa casilla, no puedes moverte.
+	if ((map->ComprobarContenido(input.x, input.y)).m_Type == CEnte::PERSONAJE)	//Ya hay un personaje en esa casilla, no puedes moverte.
 		return 0;
 
 }
@@ -86,18 +86,59 @@ void CPersonaje::Añadir_Buff(CItem item)
 		{
 		case CBonus::SALUD:
 		{
-			//ACABELO WEY
+			m_iSalud += item.m_Bonus.getBonus();
+			break;
 		}
+		case CBonus::VEL:
+		{
+			m_iVel += item.m_Bonus.getBonus();
+			break;
+		}
+		case CBonus::ATQ_FIS:
+		{
+			m_iAtq_fis += item.m_Bonus.getBonus();
+			break;
+		}
+		case CBonus::ATQ_HAB:
+		{
+			m_iAtq_hab += item.m_Bonus.getBonus();
+			break;
+		}
+		case CBonus::DEF_FIS:
+		{
+			m_iDef_fis += item.m_Bonus.getBonus();
+			break;
+		}
+		case CBonus::DEF_HAB:
+		{
+			m_iDef_hab += item.m_Bonus.getBonus();
+			break;
+		}
+		case CBonus::SALUD_MAX:
+		{
+			m_iSaludMax += item.m_Bonus.getBonus();
+			m_iSalud = m_iSaludMax;
+			break;
+		}
+		case CBonus::AGUANTE:
+		{
+			if (m_iAguante += item.m_Bonus.getBonus() <= m_iAguanteMax)
+				m_iAguante += item.m_Bonus.getBonus();
+			else
+				m_iAguante = m_iAguanteMax;
+			break;
+		}
+
 		}
 		m_bObjOn = true;
 	}
 }
 
-void CPersonaje::Recoger_Objeto(CItem item)
+void CPersonaje::Recoger_Objeto(CEnte* item)
 {
-		m_Obj = item;
+		m_Obj = (CItem) item;
 		m_bObjDisp = false;				//cambiamos el estado de disponibilidad de objeto tras recogerlo
-		Añadir_Buff(item);
+		Añadir_Buff(&item);
 }
 
 //Falta la función actualizar y posiblemente el constructor

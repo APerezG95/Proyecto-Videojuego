@@ -4,7 +4,7 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 07/05/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 13/05/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -40,8 +40,8 @@ public:
 	virtual int Atacar(int consumo=0, bool tipodaño=0, int daño_base=1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
 	virtual int Defender(int dmg, bool tipodaño=0);
 	void Actualizar();
-	bool Moverse(CPosicion input, CMapa map);
-	void Añadir_Buff(CItem item);
-	void Recoger_Objeto(CItem item);
+	bool Moverse(CPosicion input, CMapa* map);
+	virtual void Añadir_Buff(CItem item);
+	virtual void Recoger_Objeto(CEnte* item);
 
 };

@@ -12,9 +12,8 @@ Mario:
 	--> Cuando acabe Adri de tocar la clase CItem completa, implementar la función Añadir_Buff.
 	--> Revisar la función inicializa por referencia.
 	--> Añadir las clases CObstaculo, CNada y CInaccesible para complementar la clase mapa.
-	--> Modificar la función moverse.
-	--> !!!!Acaba la movida de añadir buff pls.
+	--> Modificar la función moverse.!!
 
 Ideinchis:
-	-->¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?
+	--> ¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?
 	--> recoger un bacon queso

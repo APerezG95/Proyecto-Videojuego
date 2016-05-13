@@ -80,6 +80,10 @@ _07/05/2016_
 _11/05/2016_
 	--> Modificada la función Añadir_Buff para que reciba un objeto del tipo CItem.
 
+_13/05/2016_
+	--> Completada la función Añadir_Buff, modificada para ello levemente la clase CBonus. Nota: Todo objeto que aumenta salud máxima sana por completo.
+	--> Añadidos los valores de salud máxima y aguante a la clase CBonus.
+
 
 
 
