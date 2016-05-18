@@ -4,7 +4,7 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Adrián Pérez Gutiérrez               |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 13/05/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 18/05/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -22,10 +22,12 @@ class CItem: public CEnte
 {
 private:         
 	char m_sName[MAX_NOM];
+	
 public:
 	CBonus m_Bonus;
 	CItem(char* name, CPosicion Pos, CBonus bonus);
 	CItem(CBonus);                                  //Nombre en blanco y posicion (0,0)
+	virtual CBonus getDatos();
 	
 };
 

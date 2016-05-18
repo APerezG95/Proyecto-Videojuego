@@ -1,3 +1,15 @@
+/*    .-----------------------------------------------------------------.    */
+/*   /  .-.                                                         .-.  \   */
+/*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
+/*  | |\_.  |                                                     |    /| |  */
+/*  |\|  | /|         Autor: Adrián Pérez Gutiérrez               |\  | |/|  */
+/*  | `---' |                                                     | `---' |  */
+/*  |       |         Fecha Última Modificación: 18/05/2016       |       |  */
+/*  |       |-----------------------------------------------------|       |  */
+/*  \       |                                                     |       /  */
+/*   \     /                                                       \     /   */
+/*    `---'                                                         `---'    */
+
 #include "CItem.h"
 #include "CBonus.h"
 
@@ -8,7 +20,10 @@ CItem::CItem(char * name, CPosicion Pos, CBonus Bonus)
 	m_Bonus = Bonus;
 }
 
-
+CBonus CItem::getDatos()
+{
+	return m_Bonus;
+}
 
 CItem::CItem(CBonus bonus)
 {

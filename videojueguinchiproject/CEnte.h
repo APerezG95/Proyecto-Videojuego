@@ -4,7 +4,7 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 13/05/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 18/05/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -20,6 +20,7 @@ public:
 	CEnte();
 	~CEnte();
 	m_eTipo m_Type;
+	virtual CBonus getDatos();
 
 protected:
 	CPosicion m_Pos;

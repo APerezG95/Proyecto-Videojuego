@@ -4,7 +4,7 @@
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 13/05/2016       |       |  */
+/*  |       |         Fecha Última Modificación: 18/05/2016       |       |  */
 /*  |       |---------------------------------------------------- |       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -60,7 +60,7 @@ bool CPersonaje::Moverse(CPosicion input, CMapa* map)
 	{		//Si en la pos hay un objeto, si puede se mueve y lo recoje
 		if(m_bObjDisp)
 		{
-			Recoger_Objeto(&map->ComprobarContenido(input.x, input.y));	//Ojo, aquí problema
+			Recoger_Objeto(&map->ComprobarContenido(input.x, input.y));
 			map->ActualizarMapa(input.x, input.y, CEnte::PERSONAJE);
 			map->ActualizarMapa(m_Pos.x, m_Pos.y, CEnte::NADA);
 			m_Pos = input;
@@ -136,9 +136,9 @@ void CPersonaje::Añadir_Buff(CItem item)
 
 void CPersonaje::Recoger_Objeto(CEnte* item)
 {
-		m_Obj = (CItem) item;
+		m_Obj = *((CItem*) item);
 		m_bObjDisp = false;				//cambiamos el estado de disponibilidad de objeto tras recogerlo
-		Añadir_Buff(&item);
+		Añadir_Buff(item->getDatos());
 }
 
 //Falta la función actualizar y posiblemente el constructor

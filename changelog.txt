@@ -84,6 +84,7 @@ _13/05/2016_
 	--> Completada la función Añadir_Buff, modificada para ello levemente la clase CBonus. Nota: Todo objeto que aumenta salud máxima sana por completo.
 	--> Añadidos los valores de salud máxima y aguante a la clase CBonus.
 
-
+_18/05/2016_
+	--> Creada la función polimórfica getDatos para obtener datos de interés de las clases (aún por modificar).
 
 
