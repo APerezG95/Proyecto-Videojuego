@@ -1,3 +1,6 @@
+CAMBIAR A PROTECTEC LA FUNCION ESTA RARUNA LOCO
+
+
 ﻿Adrian: 
 	--> Implementar la clase CBonus.
 	--> Implementar la clase CAtaque.
