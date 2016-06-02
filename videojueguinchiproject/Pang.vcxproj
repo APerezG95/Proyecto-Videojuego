@@ -82,22 +82,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Basket.cpp" />
+    <ClCompile Include="CBasket.cpp" />
     <ClCompile Include="CBonus.cpp" />
     <ClCompile Include="CItem.cpp" />
+    <ClCompile Include="Cordilleras.cpp" />
     <ClCompile Include="CPersonaje.cpp" />
     <ClCompile Include="CMapa.cpp" />
     <ClCompile Include="CEnte.cpp" />
+    <ClCompile Include="CInaccesible.cpp" />
+    <ClCompile Include="CNada.cpp" />
+    <ClCompile Include="CObstaculo.cpp" />
+    <ClCompile Include="CDestruye.cpp" />
+    <ClCompile Include="CEmpollon.cpp" />
+    <ClCompile Include="CEtsidiante.cpp" />
+    <ClCompile Include="CHippie.cpp" />
+    <ClCompile Include="CPasota.cpp" />
+    <ClCompile Include="CEnemigo.cpp" />
+    <ClCompile Include="CJefe.cpp" />
     <ClCompile Include="src\Pang.cpp" />
+    <ClCompile Include="CTuno.cpp" />
+    <ClCompile Include="CVoley.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Basket.h" />
+    <ClInclude Include="CBasket.h" />
     <ClInclude Include="CBonus.h" />
     <ClInclude Include="CItem.h" />
     <ClInclude Include="CMapa.h" />
+    <ClInclude Include="Cordilleras.h" />
     <ClInclude Include="CPosicion.h" />
     <ClInclude Include="CPersonaje.h" />
     <ClInclude Include="CEnte.h" />
+    <ClInclude Include="CInaccesible.h" />
+    <ClInclude Include="CNada.h" />
+    <ClInclude Include="CObstaculo.h" />
+    <ClInclude Include="CDestruye.h" />
+    <ClInclude Include="CEmpollon.h" />
+    <ClInclude Include="CEtsidiante.h" />
+    <ClInclude Include="CHippie.h" />
+    <ClInclude Include="CPasota.h" />
+    <ClInclude Include="CTuno.h" />
+    <ClInclude Include="CVoley.h" />
+    <ClInclude Include="CEnemigo.h" />
+    <ClInclude Include="CJefe.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

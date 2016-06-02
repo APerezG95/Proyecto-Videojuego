@@ -20,6 +20,7 @@ public:
 	CEnte();
 	~CEnte();
 	m_eTipo m_Type;
+	
 	virtual CBonus getDatos();
 
 protected:

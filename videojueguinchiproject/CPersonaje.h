@@ -41,7 +41,7 @@ public:
 	virtual int Defender(int dmg, bool tipodaño=0);
 	void Actualizar();
 	bool Moverse(CPosicion input, CMapa* map);
-	virtual void Añadir_Buff(CItem item);
+	virtual void Añadir_Buff(CBonus bonus);
 	virtual void Recoger_Objeto(CEnte* item);
 
 };

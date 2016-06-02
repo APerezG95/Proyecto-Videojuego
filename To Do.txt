@@ -8,13 +8,10 @@ CAMBIAR A PROTECTEC LA FUNCION ESTA RARUNA LOCO
 
 Mario: 
 	--> Revisar los constructores (individualizar para cada clase).
-	--> Implementar la función Actualizar para renovar las stats del personaje.
 	--> Implementar las clases heredadas de los tipos de personaje.
-	--> Cuando acabe Adri de tocar la clase CItem completa, implementar la función Añadir_Buff.
 	--> Revisar la función inicializa por referencia.
-	--> Añadir las clases CObstaculo, CNada y CInaccesible para complementar la clase mapa.
-	--> Modificar la función moverse. Mira a ver de nuevo recogerobjeto.
+	--> Modificar el switch de la función Añadir_Buff por otra cosa.
+	--> getDatos de la clase CEnte hay que retocarlo, es un mierdazo.
 
 Ideinchis:
-	--> ¿Hacemos la sobrecarga del operador "<" y ">" para hacer más cómodo el sistema de coordenadas?
 	--> recoger un bacon queso

@@ -1,2 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CPersonaje" Collapsed="true">
+    <Position X="1.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQBgACA4AQBAAAQDAAAAgAAAAQEAJAACgAIBACAA=</HashCode>
+      <FileName>CPersonaje.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CJefe" Collapsed="true">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAA=</HashCode>
+      <FileName>CJefe.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPasota" Collapsed="true">
+    <Position X="2.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>CPasota.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTuno" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>CTuno.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CVoley" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CVoley.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CHippie" Collapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>CHippie.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEtsidiante" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>CEtsidiante.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEmpollon" Collapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>CEmpollon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEnemigo" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CEnemigo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDestruye" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CDestruye.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCordilleras" Collapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cordilleras.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBasket" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CBasket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMapa" Collapsed="true">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAEAAAIAAAAAAAAAAAAAACEAAAQAIAAAAAA=</HashCode>
+      <FileName>CMapa.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEnte" Collapsed="true">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIACAAAAACAAAAAAAAAAQAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CEnte.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CNada" Collapsed="true">
+    <Position X="9" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CNada.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CObstaculo" Collapsed="true">
+    <Position X="10.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>CObstaculo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPosicion" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAgIAAAAAABgAAAAAAA=</HashCode>
+      <FileName>CPosicion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CInaccesible" Collapsed="true">
+    <Position X="12.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CInaccesible.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -78,52 +78,52 @@ bool CPersonaje::Moverse(CPosicion input, CMapa* map)
 
 }
 
-void CPersonaje::Añadir_Buff(CItem item)
+void CPersonaje::Añadir_Buff(CBonus bonus)
 {
 	if (!m_bObjOn)
 	{
-		switch (item.m_Bonus.getType())	//EnTUBOCA EL SWITCH
+		switch (bonus.getType())
 		{
 		case CBonus::SALUD:
 		{
-			m_iSalud += item.m_Bonus.getBonus();
+			m_iSalud += bonus.getBonus();
 			break;
 		}
 		case CBonus::VEL:
 		{
-			m_iVel += item.m_Bonus.getBonus();
+			m_iVel += bonus.getBonus();
 			break;
 		}
 		case CBonus::ATQ_FIS:
 		{
-			m_iAtq_fis += item.m_Bonus.getBonus();
+			m_iAtq_fis += bonus.getBonus();
 			break;
 		}
 		case CBonus::ATQ_HAB:
 		{
-			m_iAtq_hab += item.m_Bonus.getBonus();
+			m_iAtq_hab += bonus.getBonus();
 			break;
 		}
 		case CBonus::DEF_FIS:
 		{
-			m_iDef_fis += item.m_Bonus.getBonus();
+			m_iDef_fis += bonus.getBonus();
 			break;
 		}
 		case CBonus::DEF_HAB:
 		{
-			m_iDef_hab += item.m_Bonus.getBonus();
+			m_iDef_hab += bonus.getBonus();
 			break;
 		}
 		case CBonus::SALUD_MAX:
 		{
-			m_iSaludMax += item.m_Bonus.getBonus();
+			m_iSaludMax += bonus.getBonus();
 			m_iSalud = m_iSaludMax;
 			break;
 		}
 		case CBonus::AGUANTE:
 		{
-			if (m_iAguante += item.m_Bonus.getBonus() <= m_iAguanteMax)
-				m_iAguante += item.m_Bonus.getBonus();
+			if (m_iAguante += bonus.getBonus() <= m_iAguanteMax)
+				m_iAguante += bonus.getBonus();
 			else
 				m_iAguante = m_iAguanteMax;
 			break;

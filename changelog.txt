@@ -87,4 +87,9 @@ _13/05/2016_
 _18/05/2016_
 	--> Creada la función polimórfica getDatos para obtener datos de interés de las clases (aún por modificar).
 
+_02/06/2016_
+	--> Modificada la función Añadir_Buff para que lea CBonus y no CItem, de modo que se simplifique todo.
+	--> Añadidas las clases CNada, CInaccesible y CObstaculo para complementar a la clase mapa.
+	--> Añadidas las clases de todos los personajes aliados posibles, además de CEnemigo y CJefe.
+
 
