@@ -1,10 +1,10 @@
 /*    .-----------------------------------------------------------------.    */
 /*   /  .-.                                                         .-.  \   */
-/*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
+/*  |  /   \          Proyecto: Videojuego InformÃ¡tica             /   \  |  */
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 22/04/2016       |       |  */
+/*  |       |         Fecha Ãšltima ModificaciÃ³n: 22/04/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -33,6 +33,7 @@ void CBasket::Inicializa()
 
 CBasket::CBasket()
 {
+	CBasket::Inicializa();
 	
 }
 
