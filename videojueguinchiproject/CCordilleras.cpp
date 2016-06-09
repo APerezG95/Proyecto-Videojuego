@@ -17,6 +17,7 @@ void CCordilleras::Inicializa()
 
 CCordilleras::CCordilleras()
 {
+	CCordilleras::Inicializa();
 }
 
 
