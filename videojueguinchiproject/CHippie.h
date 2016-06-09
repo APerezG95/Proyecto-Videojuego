@@ -4,7 +4,7 @@ class CHippie :
 	public CPersonaje
 {
 public:
+	virtual void Inicializa();
 	CHippie();
 	~CHippie();
 };
-
