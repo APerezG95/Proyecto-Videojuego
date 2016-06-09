@@ -6,5 +6,6 @@ class CCordilleras :
 public:
 	CCordilleras();
 	~CCordilleras();
+	virtual void Inicializa();
 };
 
