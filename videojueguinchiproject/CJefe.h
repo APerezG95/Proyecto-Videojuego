@@ -4,7 +4,7 @@ class CJefe :
 	public CPersonaje
 {
 public:
-	CJefe();
+	virtual void Inicializa(); //No la usamos
+	CJefe(int a, int b, int c, float d, float e, int f, int g); //ataque fisico, habilidad, salud, def fis, def hab, nivel, aguante
 	~CJefe();
 };
-
