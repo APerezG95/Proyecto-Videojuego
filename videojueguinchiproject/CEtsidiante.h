@@ -4,6 +4,7 @@ class CEtsidiante :
 	public CPersonaje
 {
 public:
+	virtual void Inicializa();
 	CEtsidiante();
 	~CEtsidiante();
 };
