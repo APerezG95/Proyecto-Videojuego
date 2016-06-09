@@ -1,4 +1,4 @@
-CAMBIAR A PROTECTEC LA FUNCION ESTA RARUNA LOCO
+﻿CAMBIAR A PROTECTEC LA FUNCION ESTA RARUNA LOCO
 
 
 ﻿Adrian: 
@@ -12,6 +12,7 @@ Mario:
 	--> Revisar la función inicializa por referencia.
 	--> Modificar el switch de la función Añadir_Buff por otra cosa.
 	--> getDatos de la clase CEnte hay que retocarlo, es un mierdazo.
+	--> derivación de nada,...
 
 Ideinchis:
 	--> recoger un bacon queso
