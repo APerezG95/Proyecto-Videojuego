@@ -4,7 +4,9 @@ class CPasota :
 	public CPersonaje
 {
 public:
+	virtual void Inicializa();
 	CPasota();
 	~CPasota();
 };
+
 
