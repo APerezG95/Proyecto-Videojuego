@@ -16,7 +16,7 @@
 
 
 
-void CBasket::Inicializa(CBasket&)
+void CBasket::Inicializa()
 {
 	m_bObjOn = false;
 	m_iAtq_fis = 25;					//Escala sobre 100

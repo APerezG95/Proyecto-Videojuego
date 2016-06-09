@@ -36,7 +36,7 @@ protected:
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
 
 public:
-	virtual void Inicializa(CPersonaje&) {};								//Requiere inicialización explícita en función del tipo
+	virtual void Inicializa()=0;								//Requiere inicialización explícita en función del tipo
 	virtual int Atacar(int consumo=0, bool tipodaño=0, int daño_base=1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
 	virtual int Defender(int dmg, bool tipodaño=0);
 	void Actualizar();

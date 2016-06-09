@@ -19,7 +19,7 @@ class CBasket : public CPersonaje
 
 
 public:
-	virtual void Inicializa(CBasket&);	//Ojo aquí
+	virtual void Inicializa();	//Ojo aquí
 	CBasket();
 	~CBasket();
 };
