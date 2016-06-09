@@ -24,7 +24,7 @@ void CBasket::Inicializa()
 	m_iSaludMax = m_iSalud = 750;		//Escala sobre 1000
 	m_iDef_fis = 0.5f;
 	m_iDef_hab = 0.5f;
-	m_iVel = 6;							//Escala sobre 50
+	m_iVel = 4;							//Escala sobre 20
 	m_iBando = true;
 	m_iNivel = 1;
 	m_iAguante = m_iAguanteMax = 100;	//Escala sobre 500
