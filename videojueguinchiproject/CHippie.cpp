@@ -1,5 +1,30 @@
 #include "CHippie.h"
 
+bool CHippie::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_base)
+{
+	float danio;
+	if (tipodaño == 0) {					//Cura al aliado
+		if (m_iAguante < consumo) return 0;
+		p.m_iSalud = p.m_iSalud + daño_base;
+		if (p.m_iSalud >= p.m_iSaludMax) {
+			p.m_iSalud = p.m_iSaludMax;
+		}
+		m_iAguante -= consumo;
+		return 1;
+	}
+	else                                       //daño habilidad
+	{
+		if (m_iAguante < consumo) return 0;
+		danio = daño_base*(1 - p.m_iDef_hab);
+		p.m_iSalud = p.m_iSalud - danio;
+		if (p.m_iSalud <= 0) {
+			p.m_iSalud = 0;
+			p.m_bDisp = 0;
+		}
+		m_iAguante -= consumo;
+		return 1;
+	}
+}
 
 void CHippie::Inicializa()
 {
