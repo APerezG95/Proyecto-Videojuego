@@ -93,3 +93,6 @@ _02/06/2016_
 	--> Añadidas las clases de todos los personajes aliados posibles, además de CEnemigo y CJefe.
 
 
+_11/06/2016_
+	-->Creado en CPersonaje los ataques standard, ataque_fis y ataque_hab
+	-->Creado ataque_esp como funcion virtual no pura. De forma standard hace mas daño de lo normal. Redefinico en Hippie cura, en Destruye debilita al rival y en Empollon buffa a un aliado.
