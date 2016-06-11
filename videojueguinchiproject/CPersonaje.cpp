@@ -1,10 +1,10 @@
 /*    .-----------------------------------------------------------------.    */
 /*   /  .-.                                                         .-.  \   */
-/*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
+/*  |  /   \          Proyecto: Videojuego InformÃ¡tica             /   \  |  */
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 18/05/2016       |       |  */
+/*  |       |         Fecha Ãšltima ModificaciÃ³n: 18/05/2016       |       |  */
 /*  |       |---------------------------------------------------- |       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -14,26 +14,55 @@
 #include "CMapa.h"
 
 
-int CPersonaje::Atacar(int consumo, bool tipodaño, int proporcion)
-{
-	if (tipodaño == 0)					//Daño físico
-		return m_iAtq_fis;				//Devuelve el daño crudo
+bool CPersonaje::ataque_hab(CPersonaje &p) {
+	if (m_iAguante < 20) return 0;
+	float danio;
+	danio = m_iAtq_hab*(1-p.m_iDef_hab);
+	p.m_iSalud = p.m_iSalud - danio;
+	if (p.m_iSalud <= 0) {
+		p.m_iSalud = 0;
+		p.m_bDisp = 0;
+	}
+	m_iAguante -= 15;
+	return 1;
+}
 
-	else
-	{
-		m_iAguante -= consumo;			//Daño de habilidad
-		return m_iAtq_hab*proporcion;	//Devuelve el daño con la habilidad proporcionalmente
+void CPersonaje::ataque_fis(CPersonaje &p) {
+	float danio;
+	danio = m_iAtq_fis*(1-p.m_iDef_fis);
+	p.m_iSalud = p.m_iSalud - danio;
+	if (p.m_iSalud <= 0) {
+		p.m_iSalud = 0;
+		p.m_bDisp = 0;
 	}
 }
 
-int CPersonaje::Defender(int dmg, bool tipodaño)
+bool CPersonaje::ataque_esp(CPersonaje &p, int consumo, bool tipodaÃ±o, int daÃ±o_base)
 {
-	if (tipodaño == 0)					//Daño físico
-		return (dmg - dmg*m_iDef_fis);	//Reducción proporcional con defensa física
-
-	else
-		return (dmg - dmg*m_iDef_hab);	//Daño de habil, idem con la defensa de habil.
-
+	float danio;
+	if (tipodaÃ±o == 0) {					//DaÃ±o fÃ­sico
+		if (m_iAguante < consumo) return 0;
+		danio = daÃ±o_base*(1 - p.m_iDef_fis);
+		p.m_iSalud = p.m_iSalud - danio;
+		if (p.m_iSalud <= 0) {
+			p.m_iSalud = 0;
+			p.m_bDisp = 0;
+		}
+		m_iAguante -= consumo;
+		return 1;
+	}
+	else                                       //daÃ±o habilidad
+	{
+		if (m_iAguante < consumo) return 0;
+		danio = daÃ±o_base*(1 - p.m_iDef_hab);
+		p.m_iSalud = p.m_iSalud - danio;
+		if (p.m_iSalud <= 0) {
+			p.m_iSalud = 0;
+			p.m_bDisp = 0;
+		}
+		m_iAguante -= consumo;
+		return 1;
+	}
 }
 
 void CPersonaje::Actualizar()
@@ -42,8 +71,8 @@ void CPersonaje::Actualizar()
 
 bool CPersonaje::Moverse(CPosicion input, CMapa* map)
 {
-	int pos_max_x = m_iVel + m_Pos.x;	//Posición máxima a la que se puede mover en x
-	int pos_max_y = m_iVel + m_Pos.y;	//Posición máxima a la que se puede mover en y
+	int pos_max_x = m_iVel + m_Pos.x;	//PosiciÃ³n mÃ¡xima a la que se puede mover en x
+	int pos_max_y = m_iVel + m_Pos.y;	//PosiciÃ³n mÃ¡xima a la que se puede mover en y
 
 	if ((pos_max_x < input.x) || (pos_max_y < input.y))	//posible sobrecarga de operador <
 		return 0;						//Error, no se puede mover tan lejos
@@ -67,10 +96,10 @@ bool CPersonaje::Moverse(CPosicion input, CMapa* map)
 
 			return 1;
 		}
-		else return 0;			//Había un objeto y ya tiene uno, no puede moverse
+		else return 0;			//HabÃ­a un objeto y ya tiene uno, no puede moverse
 	}
 	
-	if ((map->ComprobarContenido(input.x, input.y)).m_Type == CEnte::INACCESIBLE)	//En la posición hay algún tipo de obstaculo. No se puede mover
+	if ((map->ComprobarContenido(input.x, input.y)).m_Type == CEnte::INACCESIBLE)	//En la posiciÃ³n hay algÃºn tipo de obstaculo. No se puede mover
 		return 0;
 
 	if ((map->ComprobarContenido(input.x, input.y)).m_Type == CEnte::PERSONAJE)	//Ya hay un personaje en esa casilla, no puedes moverte.
@@ -78,7 +107,7 @@ bool CPersonaje::Moverse(CPosicion input, CMapa* map)
 
 }
 
-void CPersonaje::Añadir_Buff(CBonus bonus)
+void CPersonaje::AÃ±adir_Buff(CBonus bonus)
 {
 	if (!m_bObjOn)
 	{
@@ -138,7 +167,7 @@ void CPersonaje::Recoger_Objeto(CEnte* item)
 {
 		m_Obj = *((CItem*) item);
 		m_bObjDisp = false;				//cambiamos el estado de disponibilidad de objeto tras recogerlo
-		Añadir_Buff(item->getDatos());
+		AÃ±adir_Buff(item->getDatos());
 }
 
-//Falta la función actualizar y posiblemente el constructor
+//Falta la funciÃ³n actualizar y posiblemente el constructor
