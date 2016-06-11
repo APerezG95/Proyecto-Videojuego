@@ -46,5 +46,19 @@ public:
 		void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
 	bool ataque_hab(CPersonaje &p); //si p muere, actualiza su estado a no disponible. retorna 0 si no habia aguante suficiente
 	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodaño = 0, int daño_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
-
+	int getm_iAtq_fis() { return m_iAtq_fis; }
+	int getm_iAtq_hab() { return m_iAtq_hab; }
+	int getm_iSalud() { return m_iSalud; }
+	int getm_iSaludMax() { return m_iSaludMax; }
+	float getm_iDef_fis() { return m_iDef_fis; }
+	float getm_iDef_hab() { return m_iDef_hab; }
+	int getm_iAguante() { return m_iAguante; }
+	int getm_iAguanteMax() { return m_iAguanteMax; }
+	void setm_iAtq_fis(int a) { m_iAtq_fis = a; }
+	void setm_iAtq_hab(int a) { m_iAtq_hab = a; }
+	void setm_iSalud(int a) { m_iSalud = a; }
+	void setm_iDef_fis(float a) { m_iDef_fis = a; }
+	void setm_iDef_hab(float a) { m_iDef_hab = a; }
+	void setm_iAguante(int a) { m_iAguante = a; }
+	void setm_bDisp(bool a) { m_bDisp = a; }
 };
