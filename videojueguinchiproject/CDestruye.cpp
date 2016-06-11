@@ -5,10 +5,10 @@ bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño
 	float danio;
 	if (tipodaño == 0) {					//Debilita al enemigo
 		if (m_iAguante < consumo) return 0;
-		p.m_iAtq_fis = 0.4*p.m_iAtq_fis;
-		p.m_iAtq_hab = 0.4*p.m_iAtq_hab;
-		p.m_iDef_fis = 0.5*p.m_iDef_fis;
-		p.m_iDef_hab = 0.5*p.m_iDef_hab;
+		setm_iAtq_fis(0.4*getm_iAtq_fis());
+		setm_iAtq_hab(0.4*getm_iAtq_hab());
+		setm_iDef_fis(0.5*getm_iDef_fis());
+		setm_iDef_hab(0.5*getm_iDef_hab());
 		m_iAguante -= consumo;
 		return 1;
 		
@@ -16,11 +16,11 @@ bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño
 	else                                       //daño habilidad
 	{
 		if (m_iAguante < consumo) return 0;
-		danio = daño_base*(1 - p.m_iDef_hab);
-		p.m_iSalud = p.m_iSalud - danio;
-		if (p.m_iSalud <= 0) {
-			p.m_iSalud = 0;
-			p.m_bDisp = 0;
+		danio = daño_base*(1 - getm_iDef_hab());
+		setm_iSalud(getm_iSalud()-danio;)
+		if (getm_iSalud() <= 0) {
+			setm_iSalud(0);
+			setm_iSalud(0);
 		}
 		m_iAguante -= consumo;
 		return 1;
