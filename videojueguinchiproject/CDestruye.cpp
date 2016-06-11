@@ -20,7 +20,7 @@ bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño
 		setm_iSalud(getm_iSalud()-danio;)
 		if (getm_iSalud() <= 0) {
 			setm_iSalud(0);
-			setm_iSalud(0);
+			setm_bDisp(false);
 		}
 		m_iAguante -= consumo;
 		return 1;
