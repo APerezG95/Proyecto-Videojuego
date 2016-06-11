@@ -44,5 +44,8 @@ public:
 	virtual void Añadir_Buff(CBonus bonus);
 	virtual void Recoger_Objeto(CEnte* item);
 	CPersonaje();
+		void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
+	bool ataque_hab(CPersonaje &p); //si p muere, actualiza su estado a no disponible. retorna 0 si no habia aguante suficiente
+	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodaño = 0, int daño_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
 
 };
