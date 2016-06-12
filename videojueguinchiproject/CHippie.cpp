@@ -1,5 +1,31 @@
 #include "CHippie.h"
 
+void CHippie::dibuja(int i, int j) {
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+
+	glDisable(GL_LIGHTING);
+
+	glBegin(GL_POLYGON);
+
+	glColor3f(1, 1, 1);
+
+	glTexCoord2d(0, 1); glVertex3f(-10, 0, -0.1);
+
+	glTexCoord2d(1, 1); glVertex3f(10, 0, -0.1);
+
+	glTexCoord2d(1, 0); glVertex3f(10, 15, -0.1);
+
+	glTexCoord2d(0, 0); glVertex3f(-10, 15, -0.1);
+
+	glEnd();
+
+	glEnable(GL_LIGHTING);
+
+	glDisable(GL_TEXTURE_2D);
+}
+
 bool CHippie::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_base)
 {
 	float danio;
