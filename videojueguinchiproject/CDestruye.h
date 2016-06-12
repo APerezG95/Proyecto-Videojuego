@@ -4,6 +4,7 @@ class CDestruye :
 	public CPersonaje
 {
 public:
+virtual void dibuja(int, int);
 virtual void Inicializa();
 	CDestruye();
 	~CDestruye();
