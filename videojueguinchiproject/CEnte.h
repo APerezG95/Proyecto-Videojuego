@@ -1,10 +1,10 @@
 /*    .-----------------------------------------------------------------.    */
 /*   /  .-.                                                         .-.  \   */
-/*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
+/*  |  /   \          Proyecto: Videojuego InformÃ¡tica             /   \  |  */
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 18/05/2016       |       |  */
+/*  |       |         Fecha Ãšltima ModificaciÃ³n: 18/05/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -20,6 +20,7 @@ public:
 	CEnte();
 	~CEnte();
 	m_eTipo m_Type;
+	virtual void dibuja(int, int);
 	
 	virtual CBonus getDatos();
 
