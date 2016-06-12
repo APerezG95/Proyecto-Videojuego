@@ -4,6 +4,7 @@ class CEmpollon :
 	public CPersonaje
 {
 public:
+virtual void dibuja(int, int);
 virtual void Inicializa();
 	CEmpollon();
 	~CEmpollon();
