@@ -1,5 +1,5 @@
 #include "glut.h"
-
+#include "../CMapa.h"
 
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
@@ -8,6 +8,16 @@ void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 
+CMapa mapa(20,20);
+
+void dibujar() {
+	for (int i = 0; i < 20; i++) {
+		for (int j = 0; j < 20; j++) {
+			if ((mapa.m_board[i][j].m_Type == (CEnte::PERSONAJE)) || (mapa.m_board[i][j].m_Type == (CEnte::ITEM)))
+				mapa.m_board[i][j].dibuja(i, j);
+		}
+	}
+}
 int main(int argc,char* argv[])
 {
 	//Inicializar el gestor de ventanas GLUT
@@ -50,14 +60,14 @@ void OnDraw(void)
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//poner aqui el código de teclado
+	//poner aqui el cÃ³digo de teclado
 
 	glutPostRedisplay();
 }
 
 void OnTimer(int value)
 {
-//poner aqui el código de animacion
+//poner aqui el cÃ³digo de animacion
 
 	//no borrar estas lineas
 	glutTimerFunc(25,OnTimer,0);
