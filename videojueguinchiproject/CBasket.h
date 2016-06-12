@@ -1,10 +1,10 @@
 /*    .-----------------------------------------------------------------.    */
 /*   /  .-.                                                         .-.  \   */
-/*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
+/*  |  /   \          Proyecto: Videojuego InformÃ¡tica             /   \  |  */
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
-/*  |       |         Fecha Última Modificación: 22/04/2016       |       |  */
+/*  |       |         Fecha Ãšltima ModificaciÃ³n: 22/04/2016       |       |  */
 /*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
@@ -19,7 +19,8 @@ class CBasket : public CPersonaje
 
 
 public:
-	virtual void Inicializa();	//Ojo aquí
+	virtual void dibuja(int, int);
+	virtual void Inicializa();	//Ojo aquÃ­
 	CBasket();
 	~CBasket();
 };
