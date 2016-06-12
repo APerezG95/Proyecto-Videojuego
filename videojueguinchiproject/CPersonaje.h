@@ -15,6 +15,7 @@
 #include "CItem.h"
 #include "CMapa.h"
 #include "CEnte.h"
+#include "ETSIDI.h"
 
 class CPersonaje: public CEnte
 {
