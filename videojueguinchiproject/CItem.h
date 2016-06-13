@@ -29,5 +29,7 @@ public:
 	CItem(CBonus);                                  //Nombre en blanco y posicion (0,0)
 	virtual CBonus getDatos();
 	
+
+	virtual void foo() {};
 };
 

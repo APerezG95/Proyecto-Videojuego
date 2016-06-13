@@ -23,8 +23,3 @@ CEnte::CEnte()
 CEnte::~CEnte()
 {
 }
-
-CBonus CEnte::getDatos()
-{
-	;
-}
