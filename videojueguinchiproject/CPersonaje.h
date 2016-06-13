@@ -62,4 +62,6 @@ public:
 	void setm_iDef_hab(float a) { m_iDef_hab = a; }
 	void setm_iAguante(int a) { m_iAguante = a; }
 	void setm_bDisp(bool a) { m_bDisp = a; }
+	int getVel() {return m_iVel;};
+	virtual void foo() {};	//Forzado de polimorfismo
 };
