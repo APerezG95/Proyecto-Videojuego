@@ -14,12 +14,6 @@
 #include "CEnte.h"
 #include "CBonus.h"
 
-
-CEnte::CEnte()
-{
-}
-
-
 CEnte::~CEnte()
 {
 }

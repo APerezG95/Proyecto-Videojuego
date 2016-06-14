@@ -1,4 +1,5 @@
 #include "CDestruye.h"
+#include "glut.h"
 
 void CDestruye::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
@@ -55,7 +56,6 @@ bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño
 
 void CDestruye::Inicializa()
 {
-	m_bObjOn = false;
 	m_iAtq_fis = 10;					//Escala sobre 100
 	m_iAtq_hab = 75;
 	m_iSaludMax = m_iSalud = 500;		//Escala sobre 1000

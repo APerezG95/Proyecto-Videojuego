@@ -1,4 +1,5 @@
 #include "CCordilleras.h"
+#include "glut.h"
 
 void CCordilleras::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
@@ -28,7 +29,6 @@ void CCordilleras::dibuja(int i, int j) {
 
 void CCordilleras::Inicializa()
 {
-	m_bObjOn = false;
 	m_iAtq_fis = 20;					//Escala sobre 100
 	m_iAtq_hab = 0;
 	m_iSaludMax = m_iSalud = 1000;		//Escala sobre 1000

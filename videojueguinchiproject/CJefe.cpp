@@ -1,4 +1,5 @@
 #include "CJefe.h"
+#include "glut.h"
 
 void CJefe::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
@@ -30,7 +31,6 @@ void CJefe::dibuja(int i, int j) {
 
 CJefe::CJefe(int a, int b, int c, float d, float e, int f, int g)
 {
-	m_bObjOn = false;
 	m_iAtq_fis = a;
 	m_iAtq_hab = b;
 	m_iSaludMax = m_iSalud = c;

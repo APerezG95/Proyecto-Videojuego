@@ -1,4 +1,5 @@
 #include "CHippie.h"
+#include "glut.h"
 
 void CHippie::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
@@ -53,7 +54,6 @@ bool CHippie::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_b
 
 void CHippie::Inicializa()
 {
-	m_bObjOn = false;
 	m_iAtq_fis = 10;					//Escala sobre 100
 	m_iAtq_hab = 40;
 	m_iSaludMax = m_iSalud = 400;		//Escala sobre 1000

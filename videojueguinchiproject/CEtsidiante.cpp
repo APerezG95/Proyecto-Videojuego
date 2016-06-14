@@ -1,6 +1,7 @@
 #include "CEtsidiante.h"
+#include "glut.h"
 
-void CEtisidiante::dibuja(int i, int j) {
+void CEtsidiante::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
 
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
@@ -28,7 +29,6 @@ void CEtisidiante::dibuja(int i, int j) {
 
 void CEtsidiante::Inicializa()
 {
-	m_bObjOn = false;
 	m_iAtq_fis = 20;					//Escala sobre 100
 	m_iAtq_hab = 20;
 	m_iSaludMax = m_iSalud = 600;		//Escala sobre 1000

@@ -70,12 +70,4 @@ void CPersonaje::Actualizar()
 }
 
 
-
-void CPersonaje::Recoger_Objeto(CEnte* item)
-{
-		m_Obj = *((CItem*) item);
-		m_bObjDisp = false;				//cambiamos el estado de disponibilidad de objeto tras recogerlo
-		Añadir_Buff(item->getDatos());
-}
-
 //Falta la función actualizar y posiblemente el constructor

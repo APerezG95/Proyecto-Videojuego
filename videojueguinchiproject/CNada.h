@@ -1,5 +1,5 @@
 #pragma once
-class CNada
+class CNada: public CEnte
 {
 public:
 

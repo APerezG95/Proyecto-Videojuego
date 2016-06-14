@@ -1,4 +1,5 @@
 #include "CVoley.h"
+#include "glut.h"
 
 void CVoley::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
@@ -28,7 +29,6 @@ void CVoley::dibuja(int i, int j) {
 
 void CVoley::Inicializa()
 {
-	m_bObjOn = false;
 	m_iAtq_fis = 40;					//Escala sobre 100
 	m_iAtq_hab = 0;
 	m_iSaludMax = m_iSalud = 750;		//Escala sobre 1000

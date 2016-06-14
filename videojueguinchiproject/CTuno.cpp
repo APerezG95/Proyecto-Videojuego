@@ -1,4 +1,5 @@
 #include "CTuno.h"
+#include "glut.h"
 
 void CTuno::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
@@ -29,7 +30,6 @@ void CTuno::dibuja(int i, int j) {
 
 void CTuno::Inicializa()
 {
-	m_bObjOn = false;
 	m_iAtq_fis = 5;					//Escala sobre 100
 	m_iAtq_hab = 5;
 	m_iSaludMax = m_iSalud = 50;		//Escala sobre 1000

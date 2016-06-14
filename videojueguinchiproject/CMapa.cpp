@@ -69,29 +69,7 @@ bool CMapa::MoverPersonaje(CPersonaje * p, CPosicion nuevaPos)
 		return false;
 	if ((m_Board[nuevaPos.x][nuevaPos.y]->m_Type) == CEnte::PERSONAJE)
 		return false;
-	if ((m_Board[nuevaPos.x][nuevaPos.y]->m_Type) == CEnte::ITEM)
-	{
-		//Se pasa el item al vector de repuestos y se toma de él nada para sustituirlo
-		p->Recoger_Objeto(m_Board[nuevaPos.x][nuevaPos.y]);
-
-		for (int i = 0; i < m_iSizeRep; i++)
-		{
-			if ((m_repuesto[i]->m_Type) == CEnte::NADA)
-			{
-				CEnte* aux = m_repuesto[i];
-				m_repuesto[i] = m_Board[nuevaPos.x][nuevaPos.y];
-				m_Board[nuevaPos.x][nuevaPos.y] = aux;
-			}
-		}
-
-		CEnte* aux = m_Board[nuevaPos.x][nuevaPos.y];
-		m_Board[nuevaPos.x][nuevaPos.y] = p;
-		m_Board[(p->getPos()).x][(p->getPos()).y] = aux;
-		p->setPos(nuevaPos);
-		return true;
-	}
-
-
+	
 }
 
 
@@ -101,18 +79,17 @@ bool CMapa::inicializaMapa(int** input)
 	generalizada de mapas a partir de una matriz, de modo que la leyenda de números es la siguiente:
 	0	->		Inaccesible
 	1	->		Nada (accesible pero vacío)
-	2	->		Item
-	3	->		Basket
-	4	->		Cordilleras
-	5	->		Destruye
-	6	->		Empollón
-	7	->		Enemigo
-	8	->		Etsidiante
-	9	->		Hippie
-	10	->		Jefe
-	11	->		Pasota
-	12	->		Tuno
-	13	->		Voley
+	2	->		Basket
+	3	->		Cordilleras
+	4	->		Destruye
+	5	->		Empollón
+	6	->		Enemigo
+	7	->		Etsidiante
+	8	->		Hippie
+	9	->		Jefe
+	10	->		Pasota
+	11	->		Tuno
+	12	->		Voley
 	Además, se fuerza el casteo dinámico de los punteros para poder meterlos como CEnte en la matriz
 	del mapa, pero se conservan como clases polimórficas.*/
 
@@ -122,46 +99,43 @@ bool CMapa::inicializaMapa(int** input)
 			switch (input[i][j])
 			{
 			case 0:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CInaccesible);
+				m_Board[i][j] = new CInaccesible;
 				break;
 			case 1:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CNada);
+				m_Board[i][j] = new CNada;
 				break;
 			case 2:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CItem);
+				m_Board[i][j] = new CBasket;
 				break;
 			case 3:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CBasket);
+				m_Board[i][j] = new CCordilleras;
 				break;
 			case 4:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CCordilleras);
+				m_Board[i][j] = new CDestruye;
 				break;
 			case 5:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CDestruye);
+				m_Board[i][j] = new CEmpollon;
 				break;
 			case 6:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CEmpollon);
+				m_Board[i][j] = new CEnemigo;
 				break;
 			case 7:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CEnemigo);
+				m_Board[i][j] = new CEtsidiante;
 				break;
 			case 8:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CEtsidiante);
+				m_Board[i][j] = new CHippie;
 				break;
 			case 9:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CHippie);
+				m_Board[i][j] = new CJefe;
 				break;
 			case 10:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CJefe);
+				m_Board[i][j] = new CPasota;
 				break;
 			case 11:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CPasota);
+				m_Board[i][j] = new CTuno;
 				break;
 			case 12:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CTuno);
-				break;
-			case 13:
-				m_Board[i][j] = dynamic_cast <CEnte*>(new CVoley);
+				m_Board[i][j] = new CVoley;
 				break;
 
 			}

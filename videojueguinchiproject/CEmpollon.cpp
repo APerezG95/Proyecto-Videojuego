@@ -1,4 +1,5 @@
 #include "CEmpollon.h"
+#include "glut.h"
 
 void CEmpollon::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);
@@ -52,7 +53,6 @@ bool CEmpollon::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño
 
 void CEmpollon::Inicializa()
 {
-	m_bObjOn = false;
 	m_iAtq_fis = 40;					//Escala sobre 100
 	m_iAtq_hab = 0;
 	m_iSaludMax = m_iSalud = 300;		//Escala sobre 1000

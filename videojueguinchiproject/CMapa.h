@@ -12,7 +12,6 @@
 
 #pragma once
 #include "CPersonaje.h"
-#include "CItem.h"
 #include "CEnte.h"
 
 class CMapa	//Esta clase gestiona la construcción y destrucción de objetos en el mapa

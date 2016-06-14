@@ -15,14 +15,11 @@
 #include "CItem.h"
 #include "CMapa.h"
 #include "CEnte.h"
-#include "ETSIDI.h"
+#include "src\CEtsidi.h"
 
 class CPersonaje: public CEnte
 {
 protected:
-	CItem m_Obj;		//Variable para almacenar las características del objeto
-	bool m_bObjDisp;	//Variable para saber si tengo un objeto o no. 0 para tengo objeto, 1 para no tengo objeto
-	bool m_bObjOn;		//Variable de comprobación. 0 para buff no aplicado, 1 para buff aplicado
 	int m_iAtq_fis;		//Ataque directo o físico. Estadística base del personaje
 	int m_iAtq_hab;		//Ataque de habilidad
 	int m_iSaludMax;	//Puntos de daño total que es capaz de soportar
@@ -41,10 +38,8 @@ public:
 	virtual int Atacar(int consumo=0, bool tipodaño=0, int daño_base=1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
 	virtual int Defender(int dmg, bool tipodaño=0);
 	void Actualizar();
-	virtual void Añadir_Buff(CBonus bonus);
-	virtual void Recoger_Objeto(CEnte* item);
 	CPersonaje();
-		void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
+	void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
 	bool ataque_hab(CPersonaje &p); //si p muere, actualiza su estado a no disponible. retorna 0 si no habia aguante suficiente
 	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodaño = 0, int daño_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
 	int getm_iAtq_fis() { return m_iAtq_fis; }

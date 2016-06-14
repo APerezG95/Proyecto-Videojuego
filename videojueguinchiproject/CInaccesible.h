@@ -1,5 +1,5 @@
 #pragma once
-class CInaccesible
+class CInaccesible: public CEnte
 {
 public:
 	virtual void foo() {};

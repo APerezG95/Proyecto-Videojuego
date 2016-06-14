@@ -1,4 +1,5 @@
 #include "CEnemigo.h"
+#include "glut.h"
 
 
 void CEnemigo::dibuja(int i, int j) {
@@ -29,7 +30,6 @@ void CEnemigo::dibuja(int i, int j) {
 
 CEnemigo::CEnemigo(int a, int b, int c, float d, float e, int f, int g)
 {
-	m_bObjOn = false;
 	m_iAtq_fis = a;
 	m_iAtq_hab = b;
 	m_iSaludMax = m_iSalud = c;

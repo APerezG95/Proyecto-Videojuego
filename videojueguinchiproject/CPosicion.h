@@ -2,12 +2,7 @@
 
 class CPosicion
 {
-private:
-
-	//TU MARIO TT HASME EL CONSTRUCTOR SIN ARGUMENTOS. VAMOS, UNO DE PODEMOS DEFENDIENDO SUS POLITICAS
-	//Done bruh, borra esta mierda de chiste que te vuelvo a hacer unfolou
-
-public:	//De momento pongo todo público para quitarnos de líos
+public:
 
 	int x;
 	int y;
@@ -18,7 +13,7 @@ public:	//De momento pongo todo público para quitarnos de líos
 	{
 		x = i;	y = j;
 	}
-	void getPos(int& i, int& j)	//Ojo, retocar esto que no me fio de que funsione
+	CPosicion getPos(int i, int j)
 	{
 		i = x;	j = y;
 	}
