@@ -37,12 +37,12 @@ void CPersonaje::ataque_fis(CPersonaje &p) {
 	}
 }
 
-bool CPersonaje::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_base)
+bool CPersonaje::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
 {
 	float danio;
-	if (tipodaño == 0) {					//Daño físico
+	if (tipodano == 0) {					//Daño físico
 		if (m_iAguante < consumo) return 0;
-		danio = daño_base*(1 - p.m_iDef_fis);
+		danio = dano_base*(1 - p.m_iDef_fis);
 		p.m_iSalud = p.m_iSalud - danio;
 		if (p.m_iSalud <= 0) {
 			p.m_iSalud = 0;
@@ -54,7 +54,7 @@ bool CPersonaje::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int dañ
 	else                                       //daño habilidad
 	{
 		if (m_iAguante < consumo) return 0;
-		danio = daño_base*(1 - p.m_iDef_hab);
+		danio = dano_base*(1 - p.m_iDef_hab);
 		p.m_iSalud = p.m_iSalud - danio;
 		if (p.m_iSalud <= 0) {
 			p.m_iSalud = 0;
@@ -66,6 +66,10 @@ bool CPersonaje::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int dañ
 }
 
 void CPersonaje::Actualizar()
+{
+}
+
+CPersonaje::CPersonaje()
 {
 }
 

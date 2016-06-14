@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "CDestruye.h"
 #include "glut.h"
 #include "ETSIDI.h"
@@ -28,10 +29,10 @@ void CDestruye::dibuja(int i, int j) {
 	glDisable(GL_TEXTURE_2D);
 }
 
-bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_base)
+bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
 {
 	float danio;
-	if (tipodaño == 0) {					//Debilita al enemigo
+	if (tipodano == 0) {					//Debilita al enemigo
 		if (m_iAguante < consumo) return 0;
 		p.setm_iAtq_fis(0.4*getm_iAtq_fis());
 		p.setm_iAtq_hab(0.4*getm_iAtq_hab());
@@ -44,7 +45,7 @@ bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño
 	else                                       //daño habilidad
 	{
 		if (m_iAguante < consumo) return 0;
-		danio = daño_base*(1 - p.getm_iDef_hab());
+		danio = dano_base*(1 - p.getm_iDef_hab());
 		p.setm_iSalud(p.getm_iSalud() - danio);
 		if (p.getm_iSalud() <= 0) {
 			p.setm_iSalud(0);

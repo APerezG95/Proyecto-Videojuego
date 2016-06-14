@@ -17,3 +17,7 @@
 CEnte::~CEnte()
 {
 }
+
+CEnte::CEnte()
+{
+}

@@ -18,23 +18,6 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\videojueguinchiproject\CEnte.h" />
-    <ClInclude Include="..\..\videojueguinchiproject\CInaccesible.h" />
-    <ClInclude Include="..\..\videojueguinchiproject\CItem.h" />
-    <ClInclude Include="..\..\videojueguinchiproject\CMapa.h" />
-    <ClInclude Include="..\..\videojueguinchiproject\CNada.h" />
-    <ClInclude Include="..\..\videojueguinchiproject\CPersonaje.h" />
-    <ClInclude Include="..\..\videojueguinchiproject\CPosicion.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\videojueguinchiproject\CEnte.cpp" />
-    <ClCompile Include="..\..\videojueguinchiproject\CInaccesible.cpp" />
-    <ClCompile Include="..\..\videojueguinchiproject\CItem.cpp" />
-    <ClCompile Include="..\..\videojueguinchiproject\CMapa.cpp" />
-    <ClCompile Include="..\..\videojueguinchiproject\CNada.cpp" />
-    <ClCompile Include="..\..\videojueguinchiproject\CPersonaje.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9D108AF4-8245-4291-80E6-22C0220601C6}</ProjectGuid>
     <RootNamespace>PruebasTrabajo</RootNamespace>

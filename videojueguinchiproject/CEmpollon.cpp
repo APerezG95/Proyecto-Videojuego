@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "CEmpollon.h"
 #include "glut.h"
 #include "ETSIDI.h"
@@ -28,20 +29,20 @@ void CEmpollon::dibuja(int i, int j) {
 	glDisable(GL_TEXTURE_2D);
 }
 
-bool CEmpollon::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_base)
+bool CEmpollon::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
 {
 	float danio;
-	if (tipodaño == 0) {					//Buffa al aliado
+	if (tipodano == 0) {					//Buffa al aliado
 		if (m_iAguante < consumo) return 0;
-		p.setm_iAtq_hab(p.getm_iAtq_hab()+daño_base);
-		p.setm_iAtq_fis(p.getm_iAtq_fis()+daño_base);
+		p.setm_iAtq_hab(p.getm_iAtq_hab()+dano_base);
+		p.setm_iAtq_fis(p.getm_iAtq_fis()+dano_base);
 		m_iAguante -= consumo;
 		return 1;
 	}
 	else                                       //daño fisico
 	{
 		if (m_iAguante < consumo) return 0;
-		danio = daño_base*(1 - p.getm_iDef_fis());
+		danio = dano_base*(1 - p.getm_iDef_fis());
 		p.setm_iSalud(p.getm_iSalud()-danio);
 		if (p.getm_iSalud() <= 0) {
 			p.setm_iSalud(0);

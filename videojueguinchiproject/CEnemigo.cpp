@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "CEnemigo.h"
 #include "glut.h"
 #include "ETSIDI.h"
@@ -27,6 +28,10 @@ void CEnemigo::dibuja(int i, int j) {
 	glEnable(GL_LIGHTING);
 
 	glDisable(GL_TEXTURE_2D);
+}
+
+void CEnemigo::Inicializa()
+{
 }
 
 CEnemigo::CEnemigo(int a, int b, int c, float d, float e, int f, int g)

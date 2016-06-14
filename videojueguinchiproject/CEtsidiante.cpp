@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "CEtsidiante.h"
 #include "glut.h"
 #include "ETSIDI.h"

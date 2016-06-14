@@ -15,7 +15,7 @@
 #include "CInaccesible.h"
 #include "CBasket.h"
 #include "CCordilleras.h"
-#include"CDestruye.h"
+#include "CDestruye.h"
 #include "CEmpollon.h"
 #include "CEnemigo.h"
 #include "CEtsidiante.h"
@@ -49,8 +49,8 @@ CEnte* CMapa::ComprobarContenido(int x, int y)
 bool CMapa::MoverPersonaje(CPersonaje * p, CPosicion nuevaPos)
 {
 
-	int mov_max_x = abs((nuevaPos.x) - ((p->getPos).x));	//movimiento máximo que puede desarrollar
-	int mov_max_y = abs((nuevaPos.y) - ((p->getPos).y));	//el personaje en relativas
+	int mov_max_x = abs((nuevaPos.x) - ((p->getPos()).x));	//movimiento máximo que puede desarrollar
+	int mov_max_y = abs((nuevaPos.y) - ((p->getPos()).y));	//el personaje en relativas
 	//Se usa la ecuación de un círculo para definir el área máxima de movimiento
 	//De este modo el personaje puede moverse su velocidad como combinación de las dos coordenadas
 	if (mov_max_x + mov_max_y > (p->getVel())) return false;	//No se puede llegar tan lejos
@@ -69,7 +69,7 @@ bool CMapa::MoverPersonaje(CPersonaje * p, CPosicion nuevaPos)
 		return false;
 	if ((m_Board[nuevaPos.x][nuevaPos.y]->m_Type) == CEnte::PERSONAJE)
 		return false;
-	
+	return false;
 }
 
 
@@ -99,10 +99,10 @@ bool CMapa::inicializaMapa(int** input)
 			switch (input[i][j])
 			{
 			case 0:
-				m_Board[i][j] = new CInaccesible;
+				//m_Board[i][j] = new CInaccesible;
 				break;
 			case 1:
-				m_Board[i][j] = new CNada;
+				//m_Board[i][j] = new CNada;
 				break;
 			case 2:
 				m_Board[i][j] = new CBasket;
@@ -117,7 +117,7 @@ bool CMapa::inicializaMapa(int** input)
 				m_Board[i][j] = new CEmpollon;
 				break;
 			case 6:
-				m_Board[i][j] = new CEnemigo;
+			//	m_Board[i][j] = new CEnemigo;
 				break;
 			case 7:
 				m_Board[i][j] = new CEtsidiante;
@@ -126,7 +126,7 @@ bool CMapa::inicializaMapa(int** input)
 				m_Board[i][j] = new CHippie;
 				break;
 			case 9:
-				m_Board[i][j] = new CJefe;
+			//	m_Board[i][j] = new CJefe;
 				break;
 			case 10:
 				m_Board[i][j] = new CPasota;
@@ -140,5 +140,5 @@ bool CMapa::inicializaMapa(int** input)
 
 			}
 		}
-
+	return true;
 }

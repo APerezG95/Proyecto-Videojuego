@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "CTuno.h"
 #include "glut.h"
 #include "ETSIDI.h"
@@ -45,7 +46,7 @@ void CTuno::Inicializa()
 
 CTuno::CTuno()
 {
-	CTuno::Inicializa;
+	CTuno::Inicializa();
 }
 
 

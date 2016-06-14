@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "CPasota.h"
 #include "glut.h"
 #include "ETSIDI.h"

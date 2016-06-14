@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "CHippie.h"
 #include "glut.h"
 #include "ETSIDI.h"
@@ -28,12 +29,12 @@ void CHippie::dibuja(int i, int j) {
 	glDisable(GL_TEXTURE_2D);
 }
 
-bool CHippie::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_base)
+bool CHippie::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
 {
 	float danio;
-	if (tipodaño == 0) {					//Cura al aliado
+	if (tipodano == 0) {					//Cura al aliado
 		if (m_iAguante < consumo) return 0;
-		p.setm_iSalud(p.getm_iSalud()+daño_base);
+		p.setm_iSalud(p.getm_iSalud()+dano_base);
 		if (p.getm_iSalud() >= p.getm_iSaludMax()) {
 			p.setm_iSalud(p.getm_iSalud());
 		}
@@ -42,7 +43,7 @@ bool CHippie::ataque_esp(CPersonaje &p, int consumo, bool tipodaño, int daño_b
 	}
 	else                                       //daño habilidad
 	{
-		danio = daño_base*(1 - p.getm_iDef_hab());
+		danio = dano_base*(1 - p.getm_iDef_hab());
 		p.setm_iSalud(p.getm_iSalud()-danio);
 		if (p.getm_iSalud() <= 0) {
 			p.setm_iSalud(0);

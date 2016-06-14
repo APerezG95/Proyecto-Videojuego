@@ -95,7 +95,6 @@
     <ClCompile Include="CHippie.cpp" />
     <ClCompile Include="CPasota.cpp" />
     <ClCompile Include="CEnemigo.cpp" />
-    <ClCompile Include="CJefe.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="CTuno.cpp" />
     <ClCompile Include="CVoley.cpp" />
@@ -117,7 +116,6 @@
     <ClInclude Include="CTuno.h" />
     <ClInclude Include="CVoley.h" />
     <ClInclude Include="CEnemigo.h" />
-    <ClInclude Include="CJefe.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

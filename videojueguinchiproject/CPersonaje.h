@@ -13,7 +13,6 @@
 #pragma once
 #include "CPosicion.h"
 #include "CItem.h"
-#include "CMapa.h"
 #include "CEnte.h"
 
 class CPersonaje: public CEnte
@@ -33,14 +32,12 @@ protected:
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
 
 public:
-	virtual void Inicializa()=0;								//Requiere inicialización explícita en función del tipo
-	virtual int Atacar(int consumo=0, bool tipodaño=0, int daño_base=1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
-	virtual int Defender(int dmg, bool tipodaño=0);
+	virtual void Inicializa() { ; }							//Requiere inicialización explícita en función del tipo
 	void Actualizar();
 	CPersonaje();
 	void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
 	bool ataque_hab(CPersonaje &p); //si p muere, actualiza su estado a no disponible. retorna 0 si no habia aguante suficiente
-	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodaño = 0, int daño_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
+	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodano = 0, int dano_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
 	int getm_iAtq_fis() { return m_iAtq_fis; }
 	int getm_iAtq_hab() { return m_iAtq_hab; }
 	int getm_iSalud() { return m_iSalud; }
@@ -57,5 +54,4 @@ public:
 	void setm_iAguante(int a) { m_iAguante = a; }
 	void setm_bDisp(bool a) { m_bDisp = a; }
 	int getVel() {return m_iVel;};
-	virtual void foo() {};	//Forzado de polimorfismo
 };

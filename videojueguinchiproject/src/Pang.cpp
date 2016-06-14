@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "glut.h"
 #include "../CMapa.h"
 
