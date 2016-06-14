@@ -1,5 +1,6 @@
 #include "CEtsidiante.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CEtsidiante::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

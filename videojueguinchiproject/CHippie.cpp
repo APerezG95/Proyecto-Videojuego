@@ -1,5 +1,6 @@
 #include "CHippie.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CHippie::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

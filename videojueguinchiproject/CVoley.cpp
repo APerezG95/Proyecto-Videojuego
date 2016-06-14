@@ -1,5 +1,6 @@
 #include "CVoley.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CVoley::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

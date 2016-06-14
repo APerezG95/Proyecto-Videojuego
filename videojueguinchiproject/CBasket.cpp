@@ -1,5 +1,6 @@
 #include "CBasket.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CBasket::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

@@ -1,5 +1,6 @@
 #include "CEmpollon.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CEmpollon::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

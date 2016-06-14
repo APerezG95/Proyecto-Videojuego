@@ -8,16 +8,22 @@ void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 
-CMapa mapa(20,20);
 
-void dibujar() {
-	for (int i = 0; i < 20; i++) {
-		for (int j = 0; j < 20; j++) {
-			if ((mapa.m_board[i][j].m_Type == (CEnte::PERSONAJE)) || (mapa.m_board[i][j].m_Type == (CEnte::ITEM)))
-				mapa.m_board[i][j].dibuja(i, j);
-		}
-	}
-}
+//What is dis shit lokohhh. Actualisate el código que el mapa no se construye ni se lee así
+
+//CMapa mapa(20,20);
+//
+//void dibujar() {
+//	for (int i = 0; i < 20; i++) {
+//		for (int j = 0; j < 20; j++) {
+//			if ((mapa.m_board[i][j].m_Type == (CEnte::PERSONAJE)) || (mapa.m_board[i][j].m_Type == (CEnte::ITEM)))
+//				mapa.m_board[i][j].dibuja(i, j);
+//		}
+//	}
+//}
+
+
+
 int main(int argc,char* argv[])
 {
 	//Inicializar el gestor de ventanas GLUT

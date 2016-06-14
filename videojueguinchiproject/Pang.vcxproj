@@ -83,15 +83,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CBasket.cpp" />
-    <ClCompile Include="CBonus.cpp" />
-    <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CCordilleras.cpp" />
     <ClCompile Include="CPersonaje.cpp" />
     <ClCompile Include="CMapa.cpp" />
     <ClCompile Include="CEnte.cpp" />
     <ClCompile Include="CInaccesible.cpp" />
     <ClCompile Include="CNada.cpp" />
-    <ClCompile Include="CObstaculo.cpp" />
     <ClCompile Include="CDestruye.cpp" />
     <ClCompile Include="CEmpollon.cpp" />
     <ClCompile Include="CEtsidiante.cpp" />
@@ -105,8 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBasket.h" />
-    <ClInclude Include="CBonus.h" />
-    <ClInclude Include="CItem.h" />
     <ClInclude Include="CMapa.h" />
     <ClInclude Include="CCordilleras.h" />
     <ClInclude Include="CPosicion.h" />
@@ -114,7 +109,6 @@
     <ClInclude Include="CEnte.h" />
     <ClInclude Include="CInaccesible.h" />
     <ClInclude Include="CNada.h" />
-    <ClInclude Include="CObstaculo.h" />
     <ClInclude Include="CDestruye.h" />
     <ClInclude Include="CEmpollon.h" />
     <ClInclude Include="CEtsidiante.h" />

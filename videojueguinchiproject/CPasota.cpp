@@ -1,5 +1,6 @@
 #include "CPasota.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CPasota::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

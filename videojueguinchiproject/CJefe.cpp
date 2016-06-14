@@ -1,5 +1,6 @@
 #include "CJefe.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CJefe::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

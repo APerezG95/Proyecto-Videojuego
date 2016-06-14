@@ -1,5 +1,6 @@
 #include "CDestruye.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CDestruye::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

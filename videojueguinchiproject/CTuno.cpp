@@ -1,5 +1,6 @@
 #include "CTuno.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 void CTuno::dibuja(int i, int j) {
 	glEnable(GL_TEXTURE_2D);

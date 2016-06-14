@@ -1,5 +1,6 @@
 #include "CEnemigo.h"
 #include "glut.h"
+#include "ETSIDI.h"
 
 
 void CEnemigo::dibuja(int i, int j) {
