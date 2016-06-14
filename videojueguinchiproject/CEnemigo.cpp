@@ -130,6 +130,7 @@ void CEnemigo::SeleccionObjetivo(CMapa map) {
 	}
 
 	//Intento atacar de nuevo
+	if(!ataquerealizado){
 	for (int z = 0; z < num_pers; z++)
 		for (int i = 0; i <= 20; i++) {
 			for (int j = 0; j <= 20; j++) {
@@ -153,4 +154,5 @@ void CEnemigo::SeleccionObjetivo(CMapa map) {
 				if (ataquerealizado)	z = 30;
 			}
 		}
+	}
 }
