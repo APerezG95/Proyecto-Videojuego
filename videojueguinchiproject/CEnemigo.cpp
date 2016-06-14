@@ -30,11 +30,7 @@ void CEnemigo::dibuja(int i, int j) {
 	glDisable(GL_TEXTURE_2D);
 }
 
-void CEnemigo::Inicializa()
-{
-}
-
-CEnemigo::CEnemigo(int a, int b, int c, float d, float e, int f, int g)
+void CEnemigo::Inicializa(int a, int b, int c, float d, float e, int f, int g)
 {
 	m_iAtq_fis = a;
 	m_iAtq_hab = b;
@@ -48,6 +44,10 @@ CEnemigo::CEnemigo(int a, int b, int c, float d, float e, int f, int g)
 	m_bDisp = true;
 }
 
+
+CEnemigo::~CEnemigo()
+{
+}
 
 CEnemigo::~CEnemigo()
 {
