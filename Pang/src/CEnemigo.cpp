@@ -31,30 +31,35 @@ void CEnemigo::dibuja(int i, int j) {
 	glDisable(GL_TEXTURE_2D);
 }
 
-void CEnemigo::Inicializa()
+
+CEnemigo::~CEnemigo()
 {
 }
 
-CEnemigo::CEnemigo(int a, int b, int c, float d, float e, int f, int g)
+CEnemigo::~CEnemigo()
 {
-	m_iAtq_fis = a;
-	m_iAtq_hab = b;
-	m_iSaludMax = m_iSalud = c;
-	m_iDef_fis = d;
-	m_iDef_hab = e;
+	m_iAtq_fis = 25;
+	m_iAtq_hab = 25;
+	m_iSaludMax = m_iSalud = 1000;
+	m_iDef_fis = 0,4;
+	m_iDef_hab = 0,4;
 	m_iVel = 3;				//constante en todos los enemigos
 	m_iBando = false;
-	m_iNivel = f;
-	m_iAguante = m_iAguanteMax = g;
+	m_iNivel = 1;
+	m_iAguante = m_iAguanteMax = 200;
 	m_bDisp = true;
 }
 
+<<<<<<< HEAD:Pang/src/CEnemigo.cpp
 
 CEnemigo::~CEnemigo()
 {
 }
 
 /*void CEnemigo::SeleccionObjetivo(CMapa map) {
+=======
+void CEnemigo::SeleccionObjetivo(CMapa map) {
+>>>>>>> origin/master:videojueguinchiproject/CEnemigo.cpp
 	CPosicion aux;
 	bool ataquerealizado = false;
 	int num_pers = 0, vidas[5];

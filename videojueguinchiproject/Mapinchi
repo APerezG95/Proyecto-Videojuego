@@ -1,0 +1,95 @@
+CMapa::CMapa() :hud("imagenes/hud.png") {
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			m_Board[i][j] = new CInaccesible;
+		}
+	}
+	for (int i = 15; i < 20; i++) {
+		for (int j = 0; j < 10; j++) {
+			m_Board[i][j] = new CInaccesible;
+		}
+	}
+	for (int i = 15; i < 20; i++) {
+		for (int j = 15; j < 20; j++) {
+			m_Board[i][j] = new CInaccesible;
+		}
+	}
+	for (int i = 5; i < 10; i++) {
+		for (int j = 0; j < 5; j++) {
+			m_Board[i][j] = new CNada;
+		}
+	}
+	for (int i = 15; i < 20; i++) {
+		for (int j = 10; j < 15; j++) {
+			m_Board[i][j] = new CNada;
+		}
+	}
+	for (int i = 10; i < 15; i++) {
+		for (int j = 0; j < 5; j++) {
+			m_Board[i][j] = new CNada;
+		}
+	}
+
+	delete m_Board[11][1];
+	delete m_Board[13][1];
+	delete m_Board[11][3];
+	delete m_Board[13][3];
+	m_Board[11][1] = new CInaccesible;
+	m_Board[13][1] = new CInaccesible;
+	m_Board[11][3] = new CInaccesible;
+	m_Board[13][3] = new CInaccesible;
+
+	for (int i = 0; i < 15; i++) {
+		for (int j = 5; j < 20; j++) {
+			m_Board[i][j] = new CNada;
+		}
+	}
+
+	delete m_Board[3][8];
+	delete m_Board[4][8];
+	delete m_Board[3][9];
+	delete m_Board[4][9];
+
+	m_Board[3][8] = new CInaccesible;
+	m_Board[4][8] = new CInaccesible;
+	m_Board[3][9] = new CInaccesible;
+	m_Board[4][9] = new CInaccesible;
+
+	delete m_Board[8][8];
+	delete m_Board[9][8];
+	delete m_Board[8][9];
+	delete m_Board[9][9];
+
+	m_Board[8][8] = new CInaccesible;
+	m_Board[9][8] = new CInaccesible;
+	m_Board[8][9] = new CInaccesible;
+	m_Board[9][9] = new CInaccesible;
+
+	delete m_Board[3][13];
+	delete m_Board[4][13];
+	delete m_Board[3][14];
+	delete m_Board[4][14];
+
+	m_Board[3][13] = new CInaccesible;
+	m_Board[4][13] = new CInaccesible;
+	m_Board[3][14] = new CInaccesible;
+	m_Board[4][14] = new CInaccesible;
+
+	delete m_Board[8][13];
+	delete m_Board[9][13];
+	delete m_Board[8][14];
+	delete m_Board[9][14];
+
+	m_Board[8][13] = new CInaccesible;
+	m_Board[9][13] = new CInaccesible;
+	m_Board[8][14] = new CInaccesible;
+	m_Board[9][14] = new CInaccesible;
+
+	delete m_Board[0][7];
+	delete m_Board[0][12];
+	delete m_Board[0][17];
+
+	m_Board[0][12] = new CHippie;
+	m_Board[0][7] = new CCordilleras;
+	m_Board[0][17] = new CCordilleras;
+}
