@@ -1,0 +1,9 @@
+﻿  CMapa.cpp
+d:\onedrive\documentos\proyecto-videojuego\pang\src\cmapa.cpp(35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\onedrive\documentos\proyecto-videojuego\pang\src\cmapa.cpp(100): warning C4552: '!': operator has no effect; expected operator with side-effect
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Pang.cpp
+  CPersonaje.cpp
+  CEnemigo.cpp
+  Pang.vcxproj -> D:\OneDrive\Documentos\Proyecto-Videojuego\Pang\bin\Pang.exe

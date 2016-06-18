@@ -1,0 +1,3 @@
+﻿  CMapa.cpp
+d:\onedrive\documentos\proyecto-videojuego\pang\src\cmapa.cpp(37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Pang.vcxproj -> D:\OneDrive\Documentos\Proyecto-Videojuego\Pang\bin\Pang.exe
