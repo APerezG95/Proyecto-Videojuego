@@ -31,6 +31,7 @@ protected:
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
 	CPosicion m_Pos;	//Posición
 	CPosicion posAntigua;
+	CPosicion primeraPos;
 	ETSIDI::SpriteSequence textura;
 	friend class CMapa;
 
@@ -39,6 +40,7 @@ public:
 	virtual void setPos(CPosicion pos) { m_Pos = pos; }
 	virtual void Inicializa() { ; }	//Requiere inicialización explícita en función del tipo
 	void dibuja();
+	void actualizaPosfinal() { primeraPos = getPos(); }
 	void actualizaPos() { posAntigua = getPos(); }
 	CPersonaje();
 	void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible

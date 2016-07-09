@@ -29,8 +29,9 @@ public:
 	bool turno;
 	bool CompruebaPos(CPosicion a);
 
-	CPosicion pos_prohib[160];
+	CPosicion pos_prohib[400];
 	CPersonaje *m_Board[5];		//Definimos la matriz que contiene el mapa
+
 private:
 	
 	float x_ojo, y_ojo, z_ojo;

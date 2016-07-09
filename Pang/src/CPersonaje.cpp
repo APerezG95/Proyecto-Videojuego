@@ -49,9 +49,10 @@ void CPersonaje::ataque_fis(CPersonaje &p) {
 }
 
 
-CPersonaje::CPersonaje():
+CPersonaje::CPersonaje() :
 	textura("imagenes/Hippie.png", 3, 4, 50, false, 0, 0, 0, 0, 1),
-	m_Pos(15,15)
+	m_Pos(10, 10),
+	primeraPos(m_Pos)
 {
 
 	textura.setCenter(0, 0);

@@ -35,14 +35,15 @@ void CMapa::dibuja()
 	hud.setPos(x_ojo-15.55, y_ojo-11.4);
 	hud.draw();
 
+	//Dibujado de personajes
 	for (int i = 0; i < 5; i++)
 	{
 		m_Board[i]->dibuja();
 	}
 
 	//Impresión del mapa
-	fondo.setSize(30, 25);
-	fondo.setPos(0,0);
+	fondo.setSize(20, 20);
+	fondo.setPos(0.5,0.5);
 	fondo.draw();
 
 	
@@ -85,11 +86,11 @@ void CMapa::tecla(unsigned char key)
 		MoverPersonaje('s');
 		break;
 	}
-	case '0':
+	case ' ':
 	{
-		if (!CompruebaPos(m_Board[PersonajeActivo]->posAntigua))
+		if (!CompruebaPos(m_Board[PersonajeActivo]->primeraPos))
 		{
-			m_Board[PersonajeActivo]->setPos(m_Board[PersonajeActivo]->posAntigua);
+			m_Board[PersonajeActivo]->actualizaPosfinal();
 		}
 		else
 		{
@@ -128,6 +129,12 @@ CMapa::CMapa() :
 	m_Board[4] = new CHippie;
 	turno = true;
 	setPersonajeActivo(0);
+	//Definimos el mapa (posible lectura desde fichero)
+	{
+		for (int i = 0; i < 20; i++)
+			for (int j = 0; j < 20; j++)
+				pos_prohib[j] = CPosicion(i, j);
+	}
 }
 
 CMapa::~CMapa()
