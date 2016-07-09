@@ -26,6 +26,18 @@ bool CPersonaje::ataque_hab(CPersonaje &p) {
 	return 1;
 }
 
+void CPersonaje::dibuja()
+{
+	glPushMatrix();
+	glColor3f(1.0f, 1.0f, 1.0f);
+
+	textura.setPos((m_Pos.x), (m_Pos.y));
+	textura.setState(orientacion());
+	textura.draw();
+
+	glPopMatrix(); 
+}
+
 void CPersonaje::ataque_fis(CPersonaje &p) {
 	float danio;
 	danio = m_iAtq_fis*(1-p.m_iDef_fis);
@@ -34,6 +46,16 @@ void CPersonaje::ataque_fis(CPersonaje &p) {
 		p.m_iSalud = 0;
 		p.m_bDisp = 0;
 	}
+}
+
+
+CPersonaje::CPersonaje():
+	textura("imagenes/Hippie.png", 3, 4, 50, false, 0, 0, 0, 0, 1),
+	m_Pos(15,15)
+{
+
+	textura.setCenter(0, 0);
+	textura.setSize(1, 1);
 }
 
 bool CPersonaje::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
@@ -64,10 +86,15 @@ bool CPersonaje::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_
 	}
 }
 
-void CPersonaje::Actualizar()
+
+int CPersonaje::orientacion()	//Devuelve el índice dentro de la imagen que se usa en setState();
 {
+	if ((posAntigua.x) > (getPos().x))
+		return 4;
+	if ((posAntigua.x) < (getPos().x))
+		return	7;
+	if ((posAntigua.y) > (getPos().y))
+		return 2;
+	if ((posAntigua.y) < (getPos().y))
+		return 10;
 }
-
-
-
-//Falta la función actualizar y posiblemente el constructor

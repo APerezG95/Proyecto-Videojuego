@@ -6,8 +6,6 @@ class CHippie :
 	public CPersonaje
 {
 public:
-	ETSIDI::SpriteSequence textura;
-	virtual void dibuja();
 	virtual void Inicializa();
 	CHippie();
 	~CHippie();

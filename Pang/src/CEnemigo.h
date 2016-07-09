@@ -11,6 +11,6 @@ virtual void dibuja(int, int);
 
 	CEnemigo(); 
 	~CEnemigo();
-	void SeleccionObjetivo(CMapa map);
+	//void SeleccionObjetivo(CMapa map);
 };
 

@@ -17,7 +17,7 @@ void onSpecialKeyboardDown(int key, int x, int y); //cuando se pulse una tecla e
 
 int main(int argc,char* argv[])
 {
-	CMapa mapa(20, 20);
+	/*CMapa mapa(20, 20);
 	int matrix[20][20] =
 	{ { 1,1,1,1,1,2,1,1,1,1,8,1,1,1,1,7,1,1,1,1 },
 	{ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
@@ -38,9 +38,9 @@ int main(int argc,char* argv[])
 	{ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
 	{ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
 	{ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
-	{ 1,1,1,1,1,6,1,1,1,1,6,1,1,1,1,6,1,1,1,1 } };
+	{ 1,1,1,1,1,6,1,1,1,1,6,1,1,1,1,6,1,1,1,1 } };*/
 
-	mapa.inicializaMapa(matrix);
+	//mapa.inicializaMapa(matrix);
 	
 	//Inicializar el gestor de ventanas GLUT
 	//y crear la ventana
@@ -86,10 +86,6 @@ void onDraw(void)
 	glLoadIdentity();
 	
 	mapa.dibuja();
-	/*ETSIDI::setTextColor(1, 1, 0);
-	ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-	ETSIDI::printxy("En busca del aprobado perdido", 0, 20);*/
-	
 	
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
@@ -107,8 +103,7 @@ void onSpecialKeyboardDown(int key, int x, int y)
 }
 void onTimer(int value)
 {
-//poner aqui el código de animacion
-	//mundo.mueve();
+	//poner aqui el código de animacion
 
 	//no borrar estas lineas
 	glutTimerFunc(25,onTimer,0);

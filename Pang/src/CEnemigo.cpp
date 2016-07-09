@@ -36,7 +36,7 @@ CEnemigo::~CEnemigo()
 {
 }
 
-CEnemigo::~CEnemigo()
+CEnemigo::CEnemigo()
 {
 	m_iAtq_fis = 25;
 	m_iAtq_hab = 25;
@@ -48,12 +48,6 @@ CEnemigo::~CEnemigo()
 	m_iNivel = 1;
 	m_iAguante = m_iAguanteMax = 200;
 	m_bDisp = true;
-}
-
-<<<<<<< HEAD:Pang/src/CEnemigo.cpp
-
-CEnemigo::~CEnemigo()
-{
 }
 
 /*void CEnemigo::SeleccionObjetivo(CMapa map) {

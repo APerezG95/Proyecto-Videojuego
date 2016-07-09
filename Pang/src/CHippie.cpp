@@ -3,16 +3,6 @@
 #include "glut.h"
 #include "ETSIDI.h"
 
-void CHippie::dibuja() 
-{
-	glPushMatrix();
-	glColor3f(1.0f, 1.0f, 1.0f);
-
-	textura.setPos((m_Pos.x), (m_Pos.y));
-	textura.draw();
-
-	glPopMatrix();
-}
 
 bool CHippie::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
 {
@@ -54,11 +44,8 @@ void CHippie::Inicializa()
 }
 
 
-CHippie::CHippie():
-	textura("imagenes/Hippie.png",3,4,50,false,0,0,0,0,1)
+CHippie::CHippie()
 {
-	textura.setCenter(0, 0);
-	textura.setSize(1, 1);
 	CHippie::Inicializa();
 }
 

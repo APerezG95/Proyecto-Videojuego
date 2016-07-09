@@ -35,22 +35,22 @@ void CMapa::dibuja()
 	hud.setPos(x_ojo-15.55, y_ojo-11.4);
 	hud.draw();
 
+	for (int i = 0; i < 5; i++)
+	{
+		m_Board[i]->dibuja();
+	}
 
-	//animación
-	m_Board[0]->setPos(m_Board[0]->getPos());
-	m_Board[0]->dibuja();
-	m_Board[1]->setPos(m_Board[1]->getPos());
-	m_Board[1]->dibuja();
-	m_Board[2]->setPos(m_Board[2]->getPos());
-	m_Board[2]->dibuja();
-	m_Board[3]->setPos(m_Board[3]->getPos());
-	m_Board[3]->dibuja();
-	m_Board[4]->setPos(m_Board[4]->getPos());
-	m_Board[4]->dibuja();
+	//Impresión del mapa
+	fondo.setSize(30, 25);
+	fondo.setPos(0,0);
+	fondo.draw();
+
+	
 }
 
 void CMapa::tecla(unsigned char key)
 {
+	m_Board[PersonajeActivo]->actualizaPos();
 	switch (key)
 	{
 	case 'i':
@@ -87,9 +87,9 @@ void CMapa::tecla(unsigned char key)
 	}
 	case '0':
 	{
-		if (!CompruebaPos(posAntigua))
+		if (!CompruebaPos(m_Board[PersonajeActivo]->posAntigua))
 		{
-			m_Board[PersonajeActivo]->setPos(posAntigua);
+			m_Board[PersonajeActivo]->setPos(m_Board[PersonajeActivo]->posAntigua);
 		}
 		else
 		{
@@ -117,7 +117,8 @@ bool CMapa::CompruebaPos(CPosicion a)
 }
 
 CMapa::CMapa() :
-	hud("imagenes/hud.png")
+	hud("imagenes/hud.png"),
+	fondo("imagenes/mapita.png")
 {
 	x_ojo = 14;	y_ojo = 10;	z_ojo = 30;
 	m_Board[0] = new CHippie;
@@ -127,7 +128,6 @@ CMapa::CMapa() :
 	m_Board[4] = new CHippie;
 	turno = true;
 	setPersonajeActivo(0);
-	setPosAntigua();
 }
 
 CMapa::~CMapa()
@@ -156,7 +156,9 @@ void CMapa::MoverPersonaje(unsigned char key)
 				flag = false;
 		}
 		if (flag)
+		{
 			m_Board[PersonajeActivo]->setPos(aux);
+		}
 		break;
 	}
 	case 's':
@@ -170,7 +172,9 @@ void CMapa::MoverPersonaje(unsigned char key)
 				flag = false;
 		}
 		if (flag)
+		{
 			m_Board[PersonajeActivo]->setPos(aux);
+		}
 		break;
 	}
 	case 'a':

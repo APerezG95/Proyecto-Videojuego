@@ -28,13 +28,12 @@ public:
 	int PersonajeActivo;
 	bool turno;
 	bool CompruebaPos(CPosicion a);
-	void setPosAntigua() { posAntigua = m_Board[PersonajeActivo]->getPos(); }
 
 	CPosicion pos_prohib[160];
 	CPersonaje *m_Board[5];		//Definimos la matriz que contiene el mapa
-	CPosicion posAntigua;
 private:
 	
 	float x_ojo, y_ojo, z_ojo;
 	ETSIDI::Sprite hud;
+	ETSIDI::Sprite fondo;
 };

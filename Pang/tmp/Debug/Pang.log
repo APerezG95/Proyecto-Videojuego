@@ -1,9 +1,27 @@
-﻿  CMapa.cpp
-d:\onedrive\documentos\proyecto-videojuego\pang\src\cmapa.cpp(35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\onedrive\documentos\proyecto-videojuego\pang\src\cmapa.cpp(100): warning C4552: '!': operator has no effect; expected operator with side-effect
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Pang.cpp
-  CPersonaje.cpp
-  CEnemigo.cpp
-  Pang.vcxproj -> D:\OneDrive\Documentos\Proyecto-Videojuego\Pang\bin\Pang.exe
+﻿Build started 08/07/2016 10:53:47.
+     1>Project "D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\Pang.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Ilib /Isrc /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"tmp\Debug\\" /Fd"tmp\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\CMapa.cpp
+         CMapa.cpp
+     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cmapa.cpp(35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cmapa.cpp(100): warning C4552: '!': operator has no effect; expected operator with side-effect
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.lib" /MACHINE:X86 tmp\Debug\CBasket.obj
+         tmp\Debug\CCordilleras.obj
+         tmp\Debug\CDestruye.obj
+         tmp\Debug\CEmpollon.obj
+         tmp\Debug\CEnemigo.obj
+         tmp\Debug\CEtsidiante.obj
+         tmp\Debug\CHippie.obj
+         tmp\Debug\CMapa.obj
+         tmp\Debug\CPasota.obj
+         tmp\Debug\CPersonaje.obj
+         tmp\Debug\CTuno.obj
+         tmp\Debug\CVoley.obj
+         tmp\Debug\Pang.obj
+         Pang.vcxproj -> D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.exe
+     1>Done Building Project "D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\Pang.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.87

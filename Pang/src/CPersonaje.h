@@ -12,6 +12,7 @@
 
 #pragma once
 #include "CPosicion.h"
+#include "ETSIDI.h"
 
 class CPersonaje
 {
@@ -29,14 +30,17 @@ protected:
 	int m_iAguanteMax;	//Puntos máximos de aguante, permiten lanzar ataques de habilidad
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
 	CPosicion m_Pos;	//Posición
+	CPosicion posAntigua;
+	ETSIDI::SpriteSequence textura;
+	friend class CMapa;
 
 public:
 	CPosicion getPos() { return m_Pos; }
 	virtual void setPos(CPosicion pos) { m_Pos = pos; }
 	virtual void Inicializa() { ; }	//Requiere inicialización explícita en función del tipo
-	virtual void dibuja() {};
-	void Actualizar();
-	CPersonaje() {};
+	void dibuja();
+	void actualizaPos() { posAntigua = getPos(); }
+	CPersonaje();
 	void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
 	bool ataque_hab(CPersonaje &p); //si p muere, actualiza su estado a no disponible. retorna 0 si no habia aguante suficiente
 	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodano = 0, int dano_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.
@@ -56,4 +60,5 @@ public:
 	void setm_iAguante(int a) { m_iAguante = a; }
 	void setm_bDisp(bool a) { m_bDisp = a; }
 	int getVel() {return m_iVel;};
+	int orientacion();
 };
