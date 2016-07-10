@@ -28,6 +28,7 @@ public:
 	int PersonajeActivo;
 	bool turno;
 	bool CompruebaPos(CPosicion a);
+	bool compruebaPosProhib(CPosicion aux);
 
 	CPosicion pos_prohib[400];
 	CPersonaje *m_Board[5];		//Definimos la matriz que contiene el mapa
@@ -37,4 +38,10 @@ private:
 	float x_ojo, y_ojo, z_ojo;
 	ETSIDI::Sprite hud;
 	ETSIDI::Sprite fondo;
+	ETSIDI::Sprite cara1;
+	ETSIDI::Sprite cara2;
+	ETSIDI::Sprite cara3;
+	ETSIDI::Sprite cara4;
+	ETSIDI::Sprite cara5;
+	ETSIDI::Sprite cara6;
 };

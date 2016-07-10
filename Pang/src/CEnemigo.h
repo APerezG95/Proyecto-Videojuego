@@ -7,9 +7,8 @@ class CEnemigo :
 	public CPersonaje
 {
 public:
-virtual void dibuja(int, int);
-
-	CEnemigo(); 
+	virtual void dibuja(int, int);
+	CEnemigo(char* text);
 	~CEnemigo();
 	//void SeleccionObjetivo(CMapa map);
 };

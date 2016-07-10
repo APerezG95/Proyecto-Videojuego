@@ -44,7 +44,8 @@ void CPasota::Inicializa()
 	m_bDisp = true;
 }
 
-CPasota::CPasota()
+CPasota::CPasota(char* text):
+	CPersonaje (text)
 {
 	CPasota::Inicializa();
 }

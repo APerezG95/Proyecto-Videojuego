@@ -64,7 +64,8 @@ void CDestruye::Inicializa()
 	m_bDisp = true;
 }
 
-CDestruye::CDestruye()
+CDestruye::CDestruye(char* text):
+	CPersonaje(text)
 {
 	CDestruye::Inicializa();
 }

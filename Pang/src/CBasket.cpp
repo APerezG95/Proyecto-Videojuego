@@ -43,7 +43,9 @@ void CBasket::Inicializa()
 	m_bDisp = true;
 }
 
-CBasket::CBasket()
+
+CBasket::CBasket(char* text):
+	CPersonaje(text)
 {
 	CBasket::Inicializa();
 	

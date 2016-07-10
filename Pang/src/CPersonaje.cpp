@@ -49,8 +49,8 @@ void CPersonaje::ataque_fis(CPersonaje &p) {
 }
 
 
-CPersonaje::CPersonaje() :
-	textura("imagenes/Hippie.png", 3, 4, 50, false, 0, 0, 0, 0, 1),
+CPersonaje::CPersonaje(char* text) :
+	textura(text, 3, 4, 50, false, 0, 0, 0, 0, 1),
 	m_Pos(10, 10),
 	primeraPos(m_Pos)
 {

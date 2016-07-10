@@ -44,7 +44,8 @@ void CTuno::Inicializa()
 	m_bDisp = true;
 }
 
-CTuno::CTuno()
+CTuno::CTuno(char* text):
+	CPersonaje(text)
 {
 	CTuno::Inicializa();
 }

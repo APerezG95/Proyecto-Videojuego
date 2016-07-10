@@ -6,7 +6,7 @@ class CEtsidiante :
 public:
 virtual void dibuja(int, int);
 	virtual void Inicializa();
-	CEtsidiante();
+	CEtsidiante(char* text);
 	~CEtsidiante();
 };
 

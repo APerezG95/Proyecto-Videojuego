@@ -6,7 +6,7 @@ class CTuno :
 public:
 virtual void dibuja(int, int);
 	virtual void Inicializa();
-	CTuno();
+	CTuno(char* text);
 	~CTuno();
 };
 

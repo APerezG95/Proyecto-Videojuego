@@ -36,7 +36,8 @@ CEnemigo::~CEnemigo()
 {
 }
 
-CEnemigo::CEnemigo()
+CEnemigo::CEnemigo(char* text):
+	CPersonaje(text)
 {
 	m_iAtq_fis = 25;
 	m_iAtq_hab = 25;

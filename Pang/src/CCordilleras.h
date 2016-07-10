@@ -7,9 +7,7 @@ class CCordilleras :
 	public CPersonaje
 {
 public:
-	ETSIDI::SpriteSequence textura;
-	virtual void dibuja();
-	CCordilleras();
+	CCordilleras(char* text);
 	~CCordilleras();
 	virtual void Inicializa();
 };

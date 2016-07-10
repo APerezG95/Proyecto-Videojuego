@@ -6,7 +6,7 @@ class CPasota :
 public:
 virtual void dibuja(int, int);
 	virtual void Inicializa();
-	CPasota();
+	CPasota(char* text);
 	~CPasota();
 };
 

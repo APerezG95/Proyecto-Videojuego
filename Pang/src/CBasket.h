@@ -20,10 +20,9 @@ class CBasket : public CPersonaje
 
 
 public:
-	//ETSIDI::SpriteSequence textura;
 	virtual void dibuja();
 	virtual void Inicializa();	//Ojo aquí
-	CBasket();
+	CBasket(char* text);
 	~CBasket();
 };
 

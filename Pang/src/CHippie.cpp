@@ -44,7 +44,8 @@ void CHippie::Inicializa()
 }
 
 
-CHippie::CHippie()
+CHippie::CHippie(char* text):
+	CPersonaje(text)
 {
 	CHippie::Inicializa();
 }

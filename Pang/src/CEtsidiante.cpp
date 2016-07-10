@@ -43,7 +43,8 @@ void CEtsidiante::Inicializa()
 	m_bDisp = true;
 }
 
-CEtsidiante::CEtsidiante()
+CEtsidiante::CEtsidiante(char* text):
+	CPersonaje(text)
 {
 	CEtsidiante::Inicializa();
 }

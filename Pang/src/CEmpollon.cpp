@@ -67,7 +67,8 @@ void CEmpollon::Inicializa()
 	m_bDisp = true;
 }
 
-CEmpollon::CEmpollon()
+CEmpollon::CEmpollon(char* text):
+	CPersonaje(text)
 {
 	CEmpollon::Inicializa();
 }

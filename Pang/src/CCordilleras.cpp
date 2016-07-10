@@ -3,27 +3,6 @@
 #include "glut.h"
 #include "ETSIDI.h"
 
-void CCordilleras::dibuja()
-{
-	glPushMatrix();
-	glTranslatef((this->getPos()).x, (this->getPos()).y, 0.5);
-	glColor3f(1.0f, 1.0f, 1.0f);
-
-	//gestion de direccion y animacion
-	//if(velocidad.x>0.01)sprite.flip(false,false);
-	//if(velocidad.x<-0.01)sprite.flip(true,false);
-	//if((velocidad.x<0.01)&&(velocidad.x>-0.01))
-	//	sprite.setState(0);
-	//else if (sprite.getState()==0)
-	//	sprite.setState(1,false);
-	textura.draw();
-	ETSIDI::setTextColor(1, 1, 1);
-	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-	ETSIDI::printxy("Cordilleras", -8, -1);
-
-	glPopMatrix();
-}
-
 
 void CCordilleras::Inicializa()
 {
@@ -39,11 +18,9 @@ void CCordilleras::Inicializa()
 	m_bDisp = true;
 }
 
-CCordilleras::CCordilleras():
-	textura("imagenes/Cordilleras.png",3,4,50,false,-7.8,0,0,0,1)
+CCordilleras::CCordilleras(char* text):
+	CPersonaje(text)
 {
-	textura.setCenter(0, 0);
-	textura.setSize(2, 2);
 	CCordilleras::Inicializa();
 }
 

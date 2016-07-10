@@ -43,7 +43,8 @@ void CVoley::Inicializa()
 	m_bDisp = true;
 }
 
-CVoley::CVoley()
+CVoley::CVoley(char* text):
+	CPersonaje (text)
 {
 	CVoley::Inicializa();
 }

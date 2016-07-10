@@ -38,11 +38,11 @@ protected:
 public:
 	CPosicion getPos() { return m_Pos; }
 	virtual void setPos(CPosicion pos) { m_Pos = pos; }
-	virtual void Inicializa() { ; }	//Requiere inicialización explícita en función del tipo
+	virtual void Inicializa() {;};	//Requiere inicialización explícita en función del tipo
 	void dibuja();
 	void actualizaPosfinal() { primeraPos = getPos(); }
 	void actualizaPos() { posAntigua = getPos(); }
-	CPersonaje();
+	CPersonaje(char* text);
 	void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
 	bool ataque_hab(CPersonaje &p); //si p muere, actualiza su estado a no disponible. retorna 0 si no habia aguante suficiente
 	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodano = 0, int dano_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.

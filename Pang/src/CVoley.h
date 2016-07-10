@@ -6,7 +6,7 @@ class CVoley :
 public:
 virtual void dibuja(int, int);
 	virtual void Inicializa();
-	CVoley();
+	CVoley(char* text);
 	~CVoley();
 };
 
