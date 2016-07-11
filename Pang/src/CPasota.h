@@ -4,9 +4,9 @@ class CPasota :
 	public CPersonaje
 {
 public:
-virtual void dibuja(int, int);
+
 	virtual void Inicializa();
-	CPasota(char* text);
+	CPasota(char* text, char* careto);
 	~CPasota();
 };
 

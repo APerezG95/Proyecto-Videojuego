@@ -4,9 +4,8 @@ class CTuno :
 	public CPersonaje
 {
 public:
-virtual void dibuja(int, int);
 	virtual void Inicializa();
-	CTuno(char* text);
+	CTuno(char* text, char* careto);
 	~CTuno();
 };
 

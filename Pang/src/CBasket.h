@@ -20,9 +20,8 @@ class CBasket : public CPersonaje
 
 
 public:
-	virtual void dibuja();
 	virtual void Inicializa();	//Ojo aquí
-	CBasket(char* text);
+	CBasket(char* text, char* careto);
 	~CBasket();
 };
 

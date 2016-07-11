@@ -25,7 +25,7 @@ protected:
 	float m_iDef_hab;	//Valor porcentual de reducción de daño de habilidad recibido
 	int m_iVel;			//Número de casillas máximo que es capaz de moverse el personaje
 	bool m_iBando;		//aliados=1 enemigos=0                       
-	int m_iNivel;		//Número que representa la cantidad de experiencia recibida y determina sus atributos
+	int m_iNum;			//Número que el personaje ocupa en la partida (representación de su cara en HUD)
 	int m_iAguante;		//Puntos de aguante actuales
 	int m_iAguanteMax;	//Puntos máximos de aguante, permiten lanzar ataques de habilidad
 	bool m_bDisp;		//disponibilidad. muerto=0 vivo=1
@@ -33,16 +33,17 @@ protected:
 	CPosicion posAntigua;
 	CPosicion primeraPos;
 	ETSIDI::SpriteSequence textura;
+	ETSIDI::Sprite cara;
 	friend class CMapa;
 
 public:
 	CPosicion getPos() { return m_Pos; }
 	virtual void setPos(CPosicion pos) { m_Pos = pos; }
 	virtual void Inicializa() {;};	//Requiere inicialización explícita en función del tipo
-	void dibuja();
+	void dibuja(float xojo, float yojo);
 	void actualizaPosfinal() { primeraPos = getPos(); }
 	void actualizaPos() { posAntigua = getPos(); }
-	CPersonaje(char* text);
+	CPersonaje(char* text, char* careto);
 	void ataque_fis(CPersonaje &p); //si p muere, actualiza su estado a no disponible
 	bool ataque_hab(CPersonaje &p); //si p muere, actualiza su estado a no disponible. retorna 0 si no habia aguante suficiente
 	virtual bool ataque_esp(CPersonaje &p, int consumo = 0, bool tipodano = 0, int dano_base = 1);	//Tipodaño 0 para físico y 1 para habilidad. daño_base es el daño de la habilidad. Consumo es para el gasto de Aguante.

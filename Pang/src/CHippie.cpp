@@ -38,14 +38,13 @@ void CHippie::Inicializa()
 	m_iDef_hab = 0.4f;
 	m_iVel = 3;							//Escala sobre 20
 	m_iBando = true;
-	m_iNivel = 1;
 	m_iAguante = m_iAguanteMax = 200;	//Escala sobre 500
 	m_bDisp = true;
 }
 
 
-CHippie::CHippie(char* text):
-	CPersonaje(text)
+CHippie::CHippie(char* text, char* careto) :
+	CPersonaje(text, careto)
 {
 	CHippie::Inicializa();
 }

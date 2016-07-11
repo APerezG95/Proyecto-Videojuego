@@ -3,31 +3,6 @@
 #include "glut.h"
 #include "ETSIDI.h"
 
-void CEmpollon::dibuja(int i, int j) {
-	glEnable(GL_TEXTURE_2D);
-
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
-
-	glDisable(GL_LIGHTING);
-
-	glBegin(GL_POLYGON);
-
-	glColor3f(1, 1, 1);
-
-	glTexCoord2d(0, 1); glVertex3f(-10, 0, -0.1);
-
-	glTexCoord2d(1, 1); glVertex3f(10, 0, -0.1);
-
-	glTexCoord2d(1, 0); glVertex3f(10, 15, -0.1);
-
-	glTexCoord2d(0, 0); glVertex3f(-10, 15, -0.1);
-
-	glEnd();
-
-	glEnable(GL_LIGHTING);
-
-	glDisable(GL_TEXTURE_2D);
-}
 
 bool CEmpollon::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
 {
@@ -62,13 +37,12 @@ void CEmpollon::Inicializa()
 	m_iDef_hab = 0.3f;
 	m_iVel = 4;							//Escala sobre 20
 	m_iBando = true;
-	m_iNivel = 1;
 	m_iAguante = m_iAguanteMax = 100;	//Escala sobre 500
 	m_bDisp = true;
 }
 
-CEmpollon::CEmpollon(char* text):
-	CPersonaje(text)
+CEmpollon::CEmpollon(char* text, char* careto) :
+	CPersonaje(text, careto)
 {
 	CEmpollon::Inicializa();
 }

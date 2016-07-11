@@ -3,33 +3,6 @@
 #include "glut.h"
 #include "ETSIDI.h"
 
-void CPasota::dibuja(int i, int j) {
-	glEnable(GL_TEXTURE_2D);
-
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
-
-	glDisable(GL_LIGHTING);
-
-	glBegin(GL_POLYGON);
-
-	glColor3f(1, 1, 1);
-
-	glTexCoord2d(0, 1); glVertex3f(-10, 0, -0.1);
-
-	glTexCoord2d(1, 1); glVertex3f(10, 0, -0.1);
-
-	glTexCoord2d(1, 0); glVertex3f(10, 15, -0.1);
-
-	glTexCoord2d(0, 0); glVertex3f(-10, 15, -0.1);
-
-	glEnd();
-
-	glEnable(GL_LIGHTING);
-
-	glDisable(GL_TEXTURE_2D);
-}
-
-
 void CPasota::Inicializa()
 {
 	m_iAtq_fis = 25;					//Escala sobre 100
@@ -39,13 +12,12 @@ void CPasota::Inicializa()
 	m_iDef_hab = 0.5f;
 	m_iVel = 8;							//Escala sobre 20
 	m_iBando = true;
-	m_iNivel = 1;
 	m_iAguante = m_iAguanteMax = 100;	//Escala sobre 500
 	m_bDisp = true;
 }
 
-CPasota::CPasota(char* text):
-	CPersonaje (text)
+CPasota::CPasota(char* text, char* careto) :
+	CPersonaje(text, careto)
 {
 	CPasota::Inicializa();
 }

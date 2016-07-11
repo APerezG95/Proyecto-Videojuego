@@ -3,25 +3,6 @@
 #include "glut.h"
 #include "ETSIDI.h"
 
-void CDestruye::dibuja() {
-	glPushMatrix();
-	glTranslatef((this->getPos()).x, (this->getPos()).y, 0.5);
-	glColor3f(1.0f, 1.0f, 1.0f);
-
-	//gestion de direccion y animacion
-	//if(velocidad.x>0.01)sprite.flip(false,false);
-	//if(velocidad.x<-0.01)sprite.flip(true,false);
-	//if((velocidad.x<0.01)&&(velocidad.x>-0.01))
-	//	sprite.setState(0);
-	//else if (sprite.getState()==0)
-	//	sprite.setState(1,false);
-	//textura.draw();
-	ETSIDI::setTextColor(1, 1, 1);
-	ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
-	ETSIDI::printxy("Hippie", -10, -1);
-
-	glPopMatrix();
-}
 
 bool CDestruye::ataque_esp(CPersonaje &p, int consumo, bool tipodano, int dano_base)
 {
@@ -59,13 +40,12 @@ void CDestruye::Inicializa()
 	m_iDef_hab = 0.3f;
 	m_iVel = 4;							//Escala sobre 20
 	m_iBando = true;
-	m_iNivel = 1;
 	m_iAguante = m_iAguanteMax = 400;	//Escala sobre 500
 	m_bDisp = true;
 }
 
-CDestruye::CDestruye(char* text):
-	CPersonaje(text)
+CDestruye::CDestruye(char* text, char* careto) :
+	CPersonaje(text, careto)
 {
 	CDestruye::Inicializa();
 }

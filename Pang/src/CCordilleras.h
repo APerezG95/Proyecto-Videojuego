@@ -7,7 +7,7 @@ class CCordilleras :
 	public CPersonaje
 {
 public:
-	CCordilleras(char* text);
+	CCordilleras(char* text, char* careto);
 	~CCordilleras();
 	virtual void Inicializa();
 };

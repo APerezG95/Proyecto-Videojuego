@@ -17,6 +17,7 @@
 
 class CMapa	//Esta clase gestiona la construcción y destrucción de objetos en el mapa
 {
+
 public:
 
 	CMapa();
@@ -35,13 +36,7 @@ public:
 
 private:
 	
-	float x_ojo, y_ojo, z_ojo;
+	const float x_ojo=50, y_ojo=10, z_ojo=30;
 	ETSIDI::Sprite hud;
 	ETSIDI::Sprite fondo;
-	ETSIDI::Sprite cara1;
-	ETSIDI::Sprite cara2;
-	ETSIDI::Sprite cara3;
-	ETSIDI::Sprite cara4;
-	ETSIDI::Sprite cara5;
-	ETSIDI::Sprite cara6;
 };

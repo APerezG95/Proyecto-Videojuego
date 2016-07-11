@@ -30,106 +30,31 @@ void CMapa::dibuja()
 		x_ojo, y_ojo, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)	
 
-	//Impresión del HUD
-
-	//Barras de salud
-	//1
-	glLineWidth(9.5);
-	glColor3f(0.0, 1.0, 0.0);
-	glBegin(GL_LINES);
-	glVertex3f(x_ojo - 12.1, y_ojo + 8.59, 0.0);
-	glVertex3f(x_ojo - 9.6, y_ojo + 8.59, 0);
-	glEnd();
-
-	//2
-	glLineWidth(9.5);
-	glColor3f(0.0, 1.0, 0.0);
-	glBegin(GL_LINES);
-	glVertex3f(x_ojo - 12.1, y_ojo + 0.673, 0.0);
-	glVertex3f(x_ojo - 9.6, y_ojo + 0.673, 0);
-	glEnd();
-
-	//3
-	glLineWidth(9.5);
-	glColor3f(0.0, 1.0, 0.0);
-	glBegin(GL_LINES);
-	glVertex3f(x_ojo - 12.1, y_ojo - 6.59, 0.0);
-	glVertex3f(x_ojo - 9.6, y_ojo - 6.59, 0);
-	glEnd();
-
-	//4
-	glLineWidth(9.5);
-	glColor3f(0.0, 1.0, 0.0);
-	glBegin(GL_LINES);
-	glVertex3f(x_ojo + 12.1, y_ojo + 8.35, 0.0);
-	glVertex3f(x_ojo + 9.6, y_ojo + 8.35, 0);
-	glEnd();
-
-	//5
-	glLineWidth(9.5);
-	glColor3f(0.0, 1.0, 0.0);
-	glBegin(GL_LINES);
-	glVertex3f(x_ojo + 12.1, y_ojo + 0.6, 0.0);
-	glVertex3f(x_ojo + 9.6, y_ojo + 0.6, 0);
-	glEnd();
-
-	//6
-	glLineWidth(9.5);
-	glColor3f(0.0, 1.0, 0.0);
-	glBegin(GL_LINES);
-	glVertex3f(x_ojo + 12.1, y_ojo - 6.56, 0.0);
-	glVertex3f(x_ojo + 9.6, y_ojo - 6.56, 0);
-	glEnd();
-	
-	//Caras
-	//1
-	cara1.setSize(30, 25);
-	cara1.setPos(x_ojo - 15.55, y_ojo - 11.4);
-	cara1.draw();
-
-	//2
-	cara2.setSize(30, 25);
-	cara2.setPos(x_ojo - 15.55, y_ojo - 11.4);
-	cara2.draw();
-
-	//3
-	cara3.setSize(30, 25);
-	cara3.setPos(x_ojo - 15.55, y_ojo - 11.4);
-	cara3.draw();
-
-	//4
-	cara4.setSize(30, 25);
-	cara4.setPos(x_ojo - 15.55, y_ojo - 11.4);
-	cara4.draw();
-
-	//5
-	cara5.setSize(30, 25);
-	cara5.setPos(x_ojo - 15.55, y_ojo - 11.4);
-	cara5.draw();
-
-	//6
-	cara6.setSize(30, 25);
-	cara6.setPos(x_ojo - 15.55, y_ojo - 11.4);
-	cara6.draw();
 
 
-	//HUD
-	hud.setSize(30, 25);
-	hud.setPos(x_ojo-15.55, y_ojo-11.4);
-	hud.draw();
-	glColor3f(0.0f, 255, 0.0f);
 
-
-	//Dibujado de personajes
-	for (int i = 0; i < 5; i++)
+	 //Dibujado de personajes
+	for (int i = 0; i < 6; i++)
 	{
-		m_Board[i]->dibuja();
+		m_Board[i]->dibuja(x_ojo, y_ojo);
 	}
 
+	//HUD
+	glPushMatrix();
+	glColor3f(1.0f, 1.0f, 1.0f);
+	hud.setSize(30, 25);
+	hud.setPos(x_ojo - 15.55, y_ojo - 11.4);
+	hud.draw();
+	glPopMatrix();
+
+
 	//Impresión del mapa
+	glPushMatrix();
+	glColor3f(1.0f, 1.0f, 1.0f);
 	fondo.setSize(20, 20);
-	fondo.setPos(0.5,0.5);
+	fondo.setPos(0.5, 0.5);
 	fondo.draw();
+	glPopMatrix();
 
 	
 }
@@ -139,6 +64,9 @@ void CMapa::tecla(unsigned char key)
 	m_Board[PersonajeActivo]->actualizaPos();
 	switch (key)
 	{
+	/*case 'l':
+		x_ojo += 0.1f;
+		break;
 	case 'i':
 		y_ojo += 0.1f;
 		break;
@@ -147,10 +75,8 @@ void CMapa::tecla(unsigned char key)
 		break;
 	case 'k':
 		y_ojo -= 0.1f;
-		break;
-	case 'l':
-		x_ojo += 0.1f;
-		break;
+		break;*/
+	
 	case 'd':
 	{
 		MoverPersonaje('d');
@@ -175,7 +101,7 @@ void CMapa::tecla(unsigned char key)
 	{
 		if (CompruebaPos(m_Board[PersonajeActivo]->primeraPos))
 		{
-			if (PersonajeActivo < 5)
+			if (PersonajeActivo < 6)
 				PersonajeActivo++;
 			else
 			{
@@ -184,7 +110,14 @@ void CMapa::tecla(unsigned char key)
 			}
 			m_Board[PersonajeActivo]->actualizaPosfinal();
 		}
+		break;
 	}
+	case '5':
+	{
+		m_Board[PersonajeActivo]->m_iSalud = 50;
+		break;
+	}
+
 
 	}
 }
@@ -201,21 +134,20 @@ bool CMapa::CompruebaPos(CPosicion a)
 
 CMapa::CMapa() :
 	hud("imagenes/hud.png"),
-	fondo("imagenes/mapita.png"),
-	cara1("imagenes/carahippie.png"),
-	cara2("imagenes/caracordilleras.png"),
-	cara3("imagenes/caraetsidiante.png"),
-	cara4("imagenes/caradestruye.png"),
-	cara5("imagenes/caraenemigo.png"),
-	cara6("imagenes/carahippie.png")
+	fondo("imagenes/mapita.png")
 {
-	x_ojo = 18;	y_ojo = 10;	z_ojo = 30;
-	m_Board[0] = new CHippie("imagenes/hippie.png");
-	m_Board[1] = new CCordilleras("imagenes/Cordilleras.png");
-	m_Board[2] = new CEtsidiante("imagenes/etsidiante.png");
-	m_Board[3] = new CDestruye("imagenes/Destruye.png");
-	m_Board[4] = new CEnemigo("imagenes/enemigo2.png");
-	m_Board[5] = new CHippie("imagenes/hippie.png");
+	/*x_ojo = 50;	y_ojo = 10;	z_ojo = 30;*/
+	m_Board[0] = new CHippie("imagenes/hippie.png", "imagenes/carahippie.png");
+	m_Board[1] = new CCordilleras("imagenes/Cordilleras.png", "imagenes/caracordilleras.png");
+	m_Board[2] = new CEtsidiante("imagenes/etsidiante.png", "imagenes/caraetsidiante.png");
+	m_Board[3] = new CDestruye("imagenes/Destruye.png", "imagenes/caradestruye.png");
+	m_Board[4] = new CEnemigo("imagenes/enemigo2.png", "imagenes/caraenemigo.png");
+	m_Board[5] = new CEmpollon("imagenes/Empollonn.png", "imagenes/caraempollon.png");
+
+
+	for (int i = 0; i < 6; i++)
+		(m_Board[i]->m_iNum) = i;
+
 	turno = true;
 	setPersonajeActivo(0);
 	{
