@@ -27,7 +27,7 @@ public:
 	void dibuja();
 	void tecla(unsigned char key);
 	int PersonajeActivo;
-	bool turno;
+	bool turno;	//true aliados, false enemigos
 	bool CompruebaPos(CPosicion a);
 	bool compruebaPosProhib(CPosicion aux);
 

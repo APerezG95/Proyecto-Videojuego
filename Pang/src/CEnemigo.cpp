@@ -23,123 +23,94 @@ void CEnemigo::Inicializa()
 	m_iDef_fis = 0, 4;
 	m_iDef_hab = 0, 4;
 	m_iVel = 3;				//constante en todos los enemigos
-	m_iBando = false;
+	m_bBando = false;
 	m_iAguante = m_iAguanteMax = 200;
 	m_bDisp = true;
 }
 
-/*void CEnemigo::SeleccionObjetivo(CMapa map) {
-=======
-void CEnemigo::SeleccionObjetivo(CMapa map) {
->>>>>>> origin/master:videojueguinchiproject/CEnemigo.cpp
-	CPosicion aux;
-	bool ataquerealizado = false;
-	int num_pers = 0, vidas[5];
-	for (int i = 0; i <= 20; i++) {
-		for (int j = 0; j <= 20; j++) {										//Primero un barrido en el que miro cuantos
-			if ((map.m_Board[i][j])->m_Type == (CEnte::PERSONAJE)) {			//personajes hay y copio sus vidas
-				CPersonaje* aux = dynamic_cast <CPersonaje *>(map.m_Board[i][j]);
-				vidas[num_pers] = aux->getm_iSalud();
-				num_pers++;
+
+void CEnemigo::SeleccionObjetivo(CMapa map)
+{
+	int aux[3] = { 0,0,0 };                              //En este vector se almacenará los personajes
+	int z = 0;										 //en orden de preferencia para el ataque
+	bool ataque_realizado = false;
+
+	for (int i = 0; i <= 6; i++) {					//Guardo la posicion de los personajes en el tablero
+		if (map.m_Board[i]->getm_bBando() == 1) {
+			aux[++z] = i;
+		}
+
+		for (int i = 0; i < 3; i++)					//Ordeno a los personajes en funcion de su vida, de menor a mayor
+			for (int j = 0; j < 2; j++)
+				if (map.m_Board[aux[j]]->getm_iSalud() > map.m_Board[aux[j + 1]]->getm_iSalud()) {
+					int Temporal = aux[j];
+					aux[j] = aux[j + 1];
+					aux[j + 1] = Temporal;
+				}
+
+		//El ataque fisico se propriza sobre el de habilidad
+		//Solo se puede atacar una vez
+		for (int i = 0; i < 3; i++) {
+			if (!ataque_realizado) {
+				bool posible_fis = false;
+				bool posible_hab = false;
+				if (sqrt(pow(getPos().x - map.m_Board[aux[i]]->getPos().x, 2) + pow(getPos().y - map.m_Board[aux[i]]->getPos().y, 2)) < 3) posible_fis = true;
+				if (sqrt(pow(getPos().x - map.m_Board[aux[i]]->getPos().x, 2) + pow(getPos().y - map.m_Board[aux[i]]->getPos().y, 2)) < 10) posible_hab = true;
+				if (posible_fis) {
+					ataque_fis(*(map.m_Board[aux[i]]));
+					ataque_realizado = true;
+				}
+				if (ataque_realizado) continue;
+				if (posible_hab)
+					if (ataque_hab(*(map.m_Board[aux[i]]))) ataque_realizado = true;
 			}
 		}
-	}
-	for (int i = 0; i < num_pers; i++)
-		for (int j = 0; j < num_pers - 1; j++)
-			if (vidas[j] > vidas[j + 1]) {
-				int Temp = vidas[j];										//ordeno las vidas de menor a mayor
-				vidas[j] = vidas[j + 1];
-				vidas[j + 1] = Temp;
+
+		//Si ningún personaje se encontraba a rango el enemigo se mueve hacia el personaje que tenga menos vida
+		CPosicion pos_aux;
+
+		if (!ataque_realizado) {
+
+			if (map.m_Board[aux[0]]->getPos().x < getPos().x) {								//Si está a la derecha
+				if (map.m_Board[aux[0]]->getPos().x > (getPos().x + m_iVel)) pos_aux.x = map.m_Board[aux[0]]->getPos().x;		//compruebo si moviendome el maximo le supero en x. Si le supero me quedo en su coordenada x, si no, me muevo lo maximo posible
+				else pos_aux.x = map.m_Board[aux[0]]->getPos().x - m_iVel;
 			}
 
-	//Intento atacar primero a los de vida mas baja
-	//El ataque fisico se propriza sobre el de habilidad
-	//Si se ha atacado se fuerza a salir para que no pueda atacar más
-	for (int z=0; z < num_pers; z++)
-		for (int i = 0; i <= 20; i++) {
-			for (int j = 0; j <= 20; j++) {
-				if ((map.m_Board[i][j])->m_Type == (CEnte::PERSONAJE)) {
-					if (((dynamic_cast <CPersonaje *>(map.m_Board[i][j]))->getm_iSalud()) == vidas[z]) {
-						bool posible_fis = false;
-						bool posible_hab = false;
-						if (sqrt(pow(i - getPos().x, 2) + pow(j - getPos().y, 2)) < 3) posible_fis = true;
-						if (sqrt(pow(i - getPos().x, 2) + pow(j - getPos().y, 2)) < 10) posible_hab = true;
-						if (posible_fis) {
-							CPersonaje& aux = dynamic_cast <CPersonaje&> (*(map.m_Board[i][j]));
-							ataque_fis(aux);
-							posible_hab = false;
-							ataquerealizado = true;
-						}
-						if (posible_hab)
-						{
-							CPersonaje& aux = dynamic_cast <CPersonaje&> (*(map.m_Board[i][j]));
-							if (ataque_hab(aux)) ataquerealizado = true;
-						}
-						if (ataquerealizado) j = 30;
-					}
-					if (ataquerealizado) i = 30;
-				}
-				if (ataquerealizado)	z = 30;
+			if (map.m_Board[aux[0]]->getPos().x > getPos().x) {
+				if (map.m_Board[aux[0]]->getPos().x < (getPos().x + m_iVel)) pos_aux.x = map.m_Board[aux[0]]->getPos().x;
+				else pos_aux.x = map.m_Board[aux[0]]->getPos().x + m_iVel;
 			}
-		}
-	//Decision si no se ha atacado. El enemigo se moverá hacia el personaje
-	//cercano con menos vida.
-	if (!ataquerealizado) {
-		for (int i = 0; i <= 20; i++) {
-			for (int j = 0; j <= 20; j++) {
-				if ((map.m_Board[i][j])->m_Type == (CEnte::PERSONAJE)) {
-					if (((dynamic_cast <CPersonaje*>(map.m_Board[i][j])->getm_iSalud())) == vidas[0]) {
-						if (i < getPos().x) {									//Si estoy a la derecha del objetivo
-							if (i > (getPos().x + m_iVel)) aux.x = i;			//compruebo si moviendome el maximo le supero en x
-							else aux.x = i - m_iVel;							//Si le supero, me quedo en su coordenada x
-						}														//Si no le supero, me muevo el maximo posible
-						if (i > getPos().x) {
-							if (i <(getPos().x + m_iVel)) aux.x = i;
-							else aux.x = i + m_iVel;
-						}
-						if (j < getPos().y) {
-							if (j >(getPos().y + m_iVel)) aux.y = j;
-							else aux.y = j - m_iVel;
-						}
-						if (j > getPos().y) {
-							if (j <(getPos().y + m_iVel)) aux.y = j;
-							else aux.y = j + m_iVel;
-						}
-					}
-				}
+			if (map.m_Board[aux[0]]->getPos().y < getPos().y) {
+				if (map.m_Board[aux[0]]->getPos().y < (getPos().y + m_iVel)) pos_aux.y = map.m_Board[aux[0]]->getPos().y;
+				else pos_aux.y = map.m_Board[aux[0]]->getPos().y - m_iVel;
 			}
-		}
-		map.MoverPersonaje(this, aux);
-	}
 
-	//Intento atacar de nuevo
-	if(!ataquerealizado){
-	for (int z = 0; z < num_pers; z++)
-		for (int i = 0; i <= 20; i++) {
-			for (int j = 0; j <= 20; j++) {
-				if ((map.m_Board[i][j])->m_Type == (CEnte::PERSONAJE)) {
-					if ((dynamic_cast <CPersonaje*>(map.m_Board[i][j])->getm_iSalud()) == vidas[z]) {
-						bool posible_fis = false;
-						bool posible_hab = false;
-						if (sqrt(pow(i - getPos().x, 2) + pow(j - getPos().y, 2)) < 3) posible_fis = true;
-						if (sqrt(pow(i - getPos().x, 2) + pow(j - getPos().y, 2)) < 10) posible_hab = true;
-						if (posible_fis) {
-							CPersonaje& aux = dynamic_cast <CPersonaje&> (*(map.m_Board[i][j]));
-							ataque_fis(aux);
-							posible_hab = false;
-							ataquerealizado = true;
-						}
-						if (posible_hab)
-						{
-							CPersonaje& aux = dynamic_cast <CPersonaje&> (*(map.m_Board[i][j]));
-							if (ataque_hab(aux)) ataquerealizado = true;
-						}
-						if (ataquerealizado) j = 30;
-					}
-					if (ataquerealizado) i = 30;
-				}
-				if (ataquerealizado)	z = 30;
+			if (map.m_Board[aux[0]]->getPos().y > getPos().y) {
+				if (map.m_Board[aux[0]]->getPos().y < (getPos().y + m_iVel)) pos_aux.y = map.m_Board[aux[0]]->getPos().y;
+				else pos_aux.y = map.m_Board[aux[0]]->getPos().y + m_iVel;
 			}
 		}
+		//M: Aquí un bucle para que vaya moviéndose una a una las posiciones hasta pos_aux desde su posición. Atento a las nuevas variables de posición
+		//de CPersonaje y las funciones que metí nuevas, seguro que alguna te facilita estos cálculos
+		//if (!ataque_realizado) map.MoverPersonaje(this, pos_aux);
+
+		if (!ataque_realizado) {
+			for (int i = 0; i < 3; i++) {
+				if (!ataque_realizado) {
+					bool posible_fis = false;
+					bool posible_hab = false;
+					if (sqrt(pow(getPos().x - map.m_Board[aux[i]]->getPos().x, 2) + pow(getPos().y - map.m_Board[aux[i]]->getPos().y, 2)) < 3) posible_fis = true;
+					if (sqrt(pow(getPos().x - map.m_Board[aux[i]]->getPos().x, 2) + pow(getPos().y - map.m_Board[aux[i]]->getPos().y, 2)) < 10) posible_hab = true;
+					if (posible_fis) {
+						ataque_fis(*map.m_Board[aux[i]]);
+						ataque_realizado = true;
+					}
+					if (ataque_realizado) continue;
+					if (posible_hab)
+						if (ataque_hab(*map.m_Board[aux[i]])) ataque_realizado = true;
+				}
+			}
+		}
+
 	}
-}*/
+}

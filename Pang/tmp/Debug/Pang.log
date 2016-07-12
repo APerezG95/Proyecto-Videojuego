@@ -1,46 +1,18 @@
-﻿Build started 11/07/2016 5:52:22.
+﻿Build started 12/07/2016 10:39:03.
      1>Project "D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\Pang.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Ilib /Isrc /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"tmp\Debug\\" /Fd"tmp\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\CEnemigo.cpp src\CMapa.cpp src\CPersonaje.cpp src\viejsa\Pang.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Ilib /Isrc /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"tmp\Debug\\" /Fd"tmp\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\CBasket.cpp src\CCordilleras.cpp src\CDestruye.cpp src\CEmpollon.cpp src\CEnemigo.cpp src\CEtsidiante.cpp src\CHippie.cpp src\CPasota.cpp src\CTuno.cpp src\CVoley.cpp
+         CVoley.cpp
+         CTuno.cpp
+         CPasota.cpp
+         CHippie.cpp
+         CEtsidiante.cpp
          CEnemigo.cpp
+         CEmpollon.cpp
+         CDestruye.cpp
+         CCordilleras.cpp
+         CBasket.cpp
          Generating Code...
-         Compiling...
-         Pang.cpp
-         CPersonaje.cpp
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(46): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(54): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(63): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(64): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(71): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(72): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(80): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(81): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(88): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(89): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(97): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(98): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(105): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(106): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(114): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(115): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(122): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(123): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(131): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(132): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(139): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(140): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(150): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(174): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(186): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-         CMapa.cpp
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cmapa.cpp(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cmapa.cpp(108): warning C4552: '!': operator has no effect; expected operator with side-effect
-         Generating Code...
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(207): warning C4715: 'CPersonaje::orientacion': not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.lib" /MACHINE:X86 tmp\Debug\CBasket.obj
          tmp\Debug\CCordilleras.obj
@@ -60,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.35
+Time Elapsed 00:00:05.18

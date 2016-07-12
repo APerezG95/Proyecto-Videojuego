@@ -24,7 +24,7 @@ protected:
 	float m_iDef_fis;	//Valor porcentual de reducción de daño físico recibido
 	float m_iDef_hab;	//Valor porcentual de reducción de daño de habilidad recibido
 	int m_iVel;			//Número de casillas máximo que es capaz de moverse el personaje
-	bool m_iBando;		//aliados=1 enemigos=0                       
+	bool m_bBando;		//aliados=1 enemigos=0                       
 	int m_iNum;			//Número que el personaje ocupa en la partida (representación de su cara en HUD)
 	int m_iAguante;		//Puntos de aguante actuales
 	int m_iAguanteMax;	//Puntos máximos de aguante, permiten lanzar ataques de habilidad
@@ -62,6 +62,7 @@ public:
 	void setm_iDef_hab(float a) { m_iDef_hab = a; }
 	void setm_iAguante(int a) { m_iAguante = a; }
 	void setm_bDisp(bool a) { m_bDisp = a; }
+	bool getm_bBando() { return m_bBando; }
 	int getVel() {return m_iVel;};
 	int orientacion();
 };

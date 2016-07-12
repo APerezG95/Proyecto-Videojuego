@@ -12,7 +12,7 @@ void CCordilleras::Inicializa()
 	m_iDef_fis = 0.7f;
 	m_iDef_hab = 0.7f;
 	m_iVel = 1;							//Escala sobre 20
-	m_iBando = true;
+	m_bBando = true;
 	m_iAguante = m_iAguanteMax = 100;	//Escala sobre 500
 	m_bDisp = true;
 }

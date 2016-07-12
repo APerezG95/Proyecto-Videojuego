@@ -52,7 +52,7 @@ void CMapa::dibuja()
 	glPushMatrix();
 	glColor3f(1.0f, 1.0f, 1.0f);
 	fondo.setSize(20, 20);
-	fondo.setPos(0.5, 0.5);
+	fondo.setPos(-10, 2);
 	fondo.draw();
 	glPopMatrix();
 
@@ -101,7 +101,7 @@ void CMapa::tecla(unsigned char key)
 	{
 		if (CompruebaPos(m_Board[PersonajeActivo]->primeraPos))
 		{
-			if (PersonajeActivo < 6)
+			if (PersonajeActivo < 3)
 				PersonajeActivo++;
 			else
 			{
@@ -136,7 +136,6 @@ CMapa::CMapa() :
 	hud("imagenes/hud.png"),
 	fondo("imagenes/mapita.png")
 {
-	/*x_ojo = 50;	y_ojo = 10;	z_ojo = 30;*/
 	m_Board[0] = new CHippie("imagenes/hippie.png", "imagenes/carahippie.png");
 	m_Board[1] = new CCordilleras("imagenes/Cordilleras.png", "imagenes/caracordilleras.png");
 	m_Board[2] = new CEtsidiante("imagenes/etsidiante.png", "imagenes/caraetsidiante.png");

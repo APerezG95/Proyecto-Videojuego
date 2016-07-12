@@ -31,7 +31,7 @@ void CPersonaje::dibuja(float xojo, float yojo)
 	glPushMatrix();
 	glColor3f(1.0f, 1.0f, 1.0f);
 
-	textura.setPos((m_Pos.x), (m_Pos.y));
+	textura.setPos((m_Pos.x - 10.5), (m_Pos.y + 1.5));
 	textura.setState(orientacion());
 	textura.draw();
 

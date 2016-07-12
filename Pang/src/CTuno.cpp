@@ -12,7 +12,7 @@ void CTuno::Inicializa()
 	m_iDef_fis = 0.1f;
 	m_iDef_hab = 0.1f;
 	m_iVel = 20;							//Escala sobre 20
-	m_iBando = true;
+	m_bBando = true;
 	m_iAguante = m_iAguanteMax = 20;	//Escala sobre 500
 	m_bDisp = true;
 }
