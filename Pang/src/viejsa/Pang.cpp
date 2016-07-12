@@ -4,6 +4,7 @@
 #include "CMapa.h"
 #include "CPosicion.h"
 #include "CHippie.h"
+#include "CEnemigo.h"
 
 CMapa mapa;
 
@@ -20,9 +21,9 @@ int main(int argc,char* argv[])
 	//Inicializar el gestor de ventanas GLUT
 	//y crear la ventana
 	glutInit(&argc, argv);
-	glutInitWindowSize(800,600);
+	glutInitWindowSize(1920,1080);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutCreateWindow("MiJuego");
+	glutCreateWindow("En busca del aprobado perdido alpha 0.1.6");
 
 	//habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
@@ -33,10 +34,6 @@ int main(int argc,char* argv[])
 	gluPerspective( 40.0, 800/600.0f, 0.1, 150);
 
 	//Cosis
-	
-
-
-
 
 
 	//Registrar los callbacks
@@ -68,8 +65,7 @@ void onDraw(void)
 void onKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el código de teclado
-	mapa.tecla(key);
-
+		mapa.tecla(key);
 	glutPostRedisplay();
 }
 void onSpecialKeyboardDown(int key, int x, int y)

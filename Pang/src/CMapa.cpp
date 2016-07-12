@@ -1,11 +1,11 @@
-/*    .-----------------------------------------------------------------.    */
+/*    .----------------------------------------------------------------.   */
 /*   /  .-.                                                         .-.  \   */
 /*  |  /   \          Proyecto: Videojuego Informática             /   \  |  */
 /*  | |\_.  |                                                     |    /| |  */
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
 /*  |       |         Fecha Última Modificación: 07/05/2016       |       |  */
-/*  |       |-----------------------------------------------------|       |  */
+/*  |       |----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
 /*    `---'                                                         `---'    */
@@ -101,21 +101,36 @@ void CMapa::tecla(unsigned char key)
 	{
 		if (CompruebaPos(m_Board[PersonajeActivo]->primeraPos))
 		{
-			if (PersonajeActivo < 3)
-				PersonajeActivo++;
-			else
+			if (turno)
 			{
-				!turno;
-				PersonajeActivo = 0;
+				if (PersonajeActivo > 2)
+					turno = !turno;
+
+				PersonajeActivo++;
+				m_Board[PersonajeActivo]->actualizaPosfinal();
 			}
-			m_Board[PersonajeActivo]->actualizaPosfinal();
 		}
 		break;
 	}
-	case '5':
+
+	case 't':
 	{
-		m_Board[PersonajeActivo]->m_iSalud = 50;
-		break;
+		if (!turno)
+		{
+			MoverPersonaje('w');
+			if (CompruebaPos(m_Board[PersonajeActivo]->primeraPos))
+			{
+				if (PersonajeActivo == 5)
+				{
+					PersonajeActivo = 0;
+					turno = !turno;
+				}
+
+				PersonajeActivo++;
+				m_Board[PersonajeActivo]->actualizaPosfinal();
+			}
+			/*(dynamic_cast <CEnemigo *> (m_Board[PersonajeActivo]))->SeleccionObjetivo(*this);*/
+		}
 	}
 
 
@@ -139,9 +154,9 @@ CMapa::CMapa() :
 	m_Board[0] = new CHippie("imagenes/hippie.png", "imagenes/carahippie.png");
 	m_Board[1] = new CCordilleras("imagenes/Cordilleras.png", "imagenes/caracordilleras.png");
 	m_Board[2] = new CEtsidiante("imagenes/etsidiante.png", "imagenes/caraetsidiante.png");
-	m_Board[3] = new CDestruye("imagenes/Destruye.png", "imagenes/caradestruye.png");
+	m_Board[3] = new CEnemigo("imagenes/enemigo.png", "imagenes/caraenemigo.png");
 	m_Board[4] = new CEnemigo("imagenes/enemigo2.png", "imagenes/caraenemigo.png");
-	m_Board[5] = new CEmpollon("imagenes/Empollonn.png", "imagenes/caraempollon.png");
+	m_Board[5] = new CEmpollon("imagenes/enemigo3.png", "imagenes/caraenemigo.png");
 
 
 	for (int i = 0; i < 6; i++)
