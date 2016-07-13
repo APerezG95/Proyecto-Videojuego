@@ -31,6 +31,7 @@ public:
 	bool turno;	//true aliados, false enemigos
 	bool CompruebaPos(CPosicion a);
 	bool compruebaPosProhib(CPosicion aux);
+	int m_iVictoria; //aliados equipo 1, enemigos equipo 2
 	void IA();
 
 	CPosicion pos_prohib[400];

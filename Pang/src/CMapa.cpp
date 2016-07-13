@@ -5,7 +5,7 @@
 /*  |\|  | /|         Autor: Mario Pedraza Esteban                |\  | |/|  */
 /*  | `---' |                                                     | `---' |  */
 /*  |       |         Fecha Última Modificación: 07/05/2016       |       |  */
-/*  |       |----------------------------------------------------|       |  */
+/*  |       |-----------------------------------------------------|       |  */
 /*  \       |                                                     |       /  */
 /*   \     /                                                       \     /   */
 /*    `---'                                                         `---'    */
@@ -23,6 +23,9 @@
 #include "CTuno.h"
 #include "CVoley.h"
 #include <cmath>
+#include <iostream>
+
+using  namespace std;
 
 
 void CMapa::dibuja()
@@ -57,70 +60,145 @@ void CMapa::dibuja()
 	fondo.draw();
 	glPopMatrix();
 
-	
+
 }
 
 void CMapa::tecla(unsigned char key)
 {
 	m_Board[PersonajeActivo]->actualizaPos();
-	switch (key)
-	{	
-	case 'd':
-	{
-		MoverPersonaje('d');
-		break;
-	}
-	case 'a':
-	{
-		MoverPersonaje('a');
-		break;
-	}
-	case 'w':
-	{
-		MoverPersonaje('w');
-		break;
-	}
-	case 's':
-	{
-		MoverPersonaje('s');
-		break;
-	}
-	case ' ':
-	{
-		if (CompruebaPos(m_Board[PersonajeActivo]->primeraPos))
+	if (m_Board[PersonajeActivo]->m_bDisp) {
+		switch (key)
 		{
-			if (turno)
-			{
+		case '1':
+		{
+			if (PersonajeActivo < 3 && !turno) {
+				m_Board[PersonajeActivo]->ataque_fis(*m_Board[3]);
 				PersonajeActivo++;
-				m_Board[PersonajeActivo]->actualizaPosfinal();
+				turno = true;
 			}
-			if (PersonajeActivo == 3)
+			break;
+		}
+		case '2':
+		{
+			if (PersonajeActivo < 3 && !turno) {
+				m_Board[PersonajeActivo]->ataque_fis(*m_Board[4]);
+				PersonajeActivo++;
+				turno = true;
+			}
+			break;
+		}
+		case '3':
+		{
+			if (PersonajeActivo < 3 && !turno) {
+				m_Board[PersonajeActivo]->ataque_fis(*m_Board[5]);
+				PersonajeActivo++;
+				turno = true;
+			}
+			break;
+		}
+		case '7':
+		{
+			if (PersonajeActivo > 2 && !turno) {
+				m_Board[PersonajeActivo]->ataque_fis(*m_Board[0]);
+				PersonajeActivo++;
+				turno = true;
+			}
+			break;
+		}
+		case '8':
+		{
+			if (PersonajeActivo > 2 && !turno) {
+				m_Board[PersonajeActivo]->ataque_fis(*m_Board[1]);
+				PersonajeActivo++;
+				turno = true;
+			}
+			break;
+		}
+		case '9':
+		{
+			if (PersonajeActivo > 2 && !turno) {
+				m_Board[PersonajeActivo]->ataque_fis(*m_Board[2]);
+				PersonajeActivo++;
+				turno = true;
+			}
+			break;
+		}
+		case 'd':
+		{
+			if (turno) {
+				MoverPersonaje('d');
+				break;
+			}
+		}
+		case 'a':
+		{
+			if (turno) {
+				MoverPersonaje('a');
+				break;
+			}
+		}
+		case 'w':
+		{
+			if (turno) {
+				MoverPersonaje('w');
+				break;
+			}
+		}
+		case 's':
+		{
+			if (turno) {
+				MoverPersonaje('s');
+				break;
+			}
+		}
+		case ' ':
+		{
+			if (CompruebaPos(m_Board[PersonajeActivo]->primeraPos) && turno)
 			{
+				m_Board[PersonajeActivo]->actualizaPosfinal();
 				turno = false;
 			}
+			break;
 		}
-		break;
-	case 't':
+		}
+	}
+	else PersonajeActivo++;
+
+	if (PersonajeActivo == 6)
+		PersonajeActivo = 0;
+
+	int flag = 0;
+
+	for (int i = 0; i < 3; i++)
 	{
-		if (!turno)
-		{
-			//(dynamic_cast <CEnemigo*> (m_Board[PersonajeActivo]))->*this);
-			PersonajeActivo++;
-		}
-		if (PersonajeActivo == 6)
-		{
-			turno = true;
-			PersonajeActivo = 0;
-		}
-
-		break;
+		if (!m_Board[i]->m_bDisp)
+			flag++;
 	}
+	if (flag == 3) m_iVictoria = 2;
 
+	flag = 0;
+	for (int i = 3; i < 6; i++)
+	{
+		if (!m_Board[i]->m_bDisp)
+			flag++;
 	}
+	if (flag == 3) m_iVictoria = 1;
 
+	if (m_iVictoria == 1)
+	{
+		cout << "Victoria equipo 1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+		for (int i = 0; i < 6; i++)
+			m_Board[i]->m_bDisp = false;
 	}
-
+	if (m_iVictoria == 2)
+	{
+		cout << "Victoria equipo 2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+		for (int i = 0; i < 6; i++)
+			m_Board[i]->m_bDisp = false;
+	}
 }
+
+
 
 bool CMapa::CompruebaPos(CPosicion a)
 {
@@ -139,10 +217,25 @@ CMapa::CMapa() :
 	m_Board[0] = new CHippie("imagenes/hippie.png", "imagenes/carahippie.png");
 	m_Board[1] = new CCordilleras("imagenes/Cordilleras.png", "imagenes/caracordilleras.png");
 	m_Board[2] = new CEtsidiante("imagenes/etsidiante.png", "imagenes/caraetsidiante.png");
-	m_Board[3] = new CEnemigo("imagenes/enemigo.png", "imagenes/caraenemigo.png");
-	m_Board[4] = new CEnemigo("imagenes/enemigo2.png", "imagenes/caraenemigo.png");
-	m_Board[5] = new CEmpollon("imagenes/enemigo3.png", "imagenes/caraenemigo.png");
+	m_Board[3] = new CDestruye("imagenes/Destruye.png", "imagenes/caradestruye.png");
+	m_Board[4] = new CEnemigo("imagenes/enemigo.png", "imagenes/caraenemigo.png");
+	m_Board[5] = new CEmpollon("imagenes/empollonn.png", "imagenes/caraempollon.png");
+	m_Board[0]->setPos(CPosicion(2, 5));
+	m_Board[0]->primeraPos = m_Board[0]->getPos();
+	m_Board[1]->setPos(CPosicion(3, 3));
+	m_Board[1]->primeraPos = m_Board[1]->getPos();
+	m_Board[2]->setPos(CPosicion(5, 4));
+	m_Board[2]->primeraPos = m_Board[2]->getPos();
+	m_Board[3]->setPos(CPosicion(16, 16));
+	m_Board[3]->primeraPos = m_Board[3]->getPos();
+	m_Board[4]->setPos(CPosicion(16, 15));
+	m_Board[4]->primeraPos = m_Board[4]->getPos();
+	m_Board[5]->setPos(CPosicion(15, 14));
+	m_Board[5]->primeraPos = m_Board[5]->getPos();
 
+
+
+	m_iVictoria = 0;
 
 	for (int i = 0; i < 6; i++)
 		(m_Board[i]->m_iNum) = i;
@@ -289,7 +382,7 @@ void CMapa::MoverPersonaje(unsigned char key)
 		CPosicion aux = m_Board[PersonajeActivo]->getPos();
 		aux.y += 1;
 		bool flag = true;
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 6; i++)
 		{
 			if ((m_Board[i]->getPos()) == aux)
 				flag = false;
@@ -309,7 +402,7 @@ void CMapa::MoverPersonaje(unsigned char key)
 		CPosicion aux = m_Board[PersonajeActivo]->getPos();
 		aux.y -= 1;
 		bool flag = true;
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 6; i++)
 		{
 			if ((m_Board[i]->getPos()) == aux)
 				flag = false;
@@ -329,7 +422,7 @@ void CMapa::MoverPersonaje(unsigned char key)
 		CPosicion aux = m_Board[PersonajeActivo]->getPos();
 		aux.x -= 1;
 		bool flag = true;
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 6; i++)
 		{
 			if ((m_Board[i]->getPos()) == aux)
 				flag = false;
@@ -347,7 +440,7 @@ void CMapa::MoverPersonaje(unsigned char key)
 		CPosicion aux = m_Board[PersonajeActivo]->getPos();
 		aux.x += 1;
 		bool flag = true;
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 6; i++)
 		{
 			if ((m_Board[i]->getPos()) == aux)
 				flag = false;

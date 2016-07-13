@@ -19,7 +19,7 @@ void CEnemigo::Inicializa()
 {
 	m_iAtq_fis = 25;
 	m_iAtq_hab = 25;
-	m_iSaludMax = m_iSalud = 1000;
+	m_iSaludMax = m_iSalud = 600;
 	m_iDef_fis = 0, 4;
 	m_iDef_hab = 0, 4;
 	m_iVel = 3;				//constante en todos los enemigos

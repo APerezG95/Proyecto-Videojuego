@@ -12,6 +12,7 @@
 
 #include "CPersonaje.h"
 #include "CMapa.h"
+#include <cmath>
 
 bool CPersonaje::ataque_hab(CPersonaje &p) {
 	if (m_iAguante < 20) return 0;
@@ -31,10 +32,11 @@ void CPersonaje::dibuja(float xojo, float yojo)
 	glPushMatrix();
 	glColor3f(1.0f, 1.0f, 1.0f);
 
-	textura.setPos((m_Pos.x - 10.5), (m_Pos.y + 1.5));
-	textura.setState(orientacion());
-	textura.draw();
-
+	if (m_bDisp) {
+		textura.setPos((m_Pos.x - 10.5), (m_Pos.y + 1.5));
+		textura.setState(orientacion());
+		textura.draw();
+	}
 	glPopMatrix(); 
 
 	switch (m_iNum)
@@ -48,11 +50,11 @@ void CPersonaje::dibuja(float xojo, float yojo)
 		cara.draw();
 		glPopMatrix();
 
-		glLineWidth(9.5);
+		glLineWidth(10);
 		glColor3f(0.0, 1.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex3f(xojo - 12.1, yojo + 8.59, 0.0);
-		glVertex3f((xojo - 9.6), yojo + 8.59, 0);
+		glVertex3f(xojo + 2.5*((float)m_iSalud/(float)m_iSaludMax)-12.1, yojo + 8.59, 0);
 		glEnd();
 		break;
 	}
@@ -69,7 +71,7 @@ void CPersonaje::dibuja(float xojo, float yojo)
 		glColor3f(0.0, 1.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex3f(xojo - 12.1, yojo + 0.673, 0.0);
-		glVertex3f(xojo - 9.6, yojo + 0.673, 0);
+		glVertex3f(xojo + 2.5*((float)m_iSalud / (float)m_iSaludMax) - 12.1, yojo + 0.673, 0);
 		glEnd();
 		break;
 	}
@@ -86,7 +88,7 @@ void CPersonaje::dibuja(float xojo, float yojo)
 		glColor3f(0.0, 1.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex3f(xojo - 12.1, yojo - 6.59, 0.0);
-		glVertex3f(xojo - 9.6, yojo - 6.59, 0);
+		glVertex3f(xojo + 2.5*((float)m_iSalud / (float)m_iSaludMax) - 12.1, yojo - 6.59, 0);
 		glEnd();
 		break;
 	}
@@ -103,7 +105,7 @@ void CPersonaje::dibuja(float xojo, float yojo)
 		glColor3f(0.0, 1.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex3f(xojo + 12.1, yojo + 8.35, 0.0);
-		glVertex3f(xojo + 9.6, yojo + 8.35, 0);
+		glVertex3f(xojo - 2.5*((float)m_iSalud / (float)m_iSaludMax) + 12.1, yojo + 8.35, 0);
 		glEnd();
 		break;
 	}
@@ -120,7 +122,7 @@ void CPersonaje::dibuja(float xojo, float yojo)
 		glColor3f(0.0, 1.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex3f(xojo + 12.1, yojo + 0.6, 0.0);
-		glVertex3f(xojo + 9.6, yojo + 0.6, 0);
+		glVertex3f(xojo - 2.5*((float)m_iSalud / (float)m_iSaludMax) + 12.1, yojo + 0.6, 0);
 		glEnd();
 		break;
 	}
@@ -137,7 +139,7 @@ void CPersonaje::dibuja(float xojo, float yojo)
 		glColor3f(0.0, 1.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex3f(xojo + 12.1, yojo - 6.56, 0.0);
-		glVertex3f(xojo + 9.6, yojo - 6.56, 0);
+		glVertex3f(xojo - 2.5*((float)m_iSalud / (float)m_iSaludMax) + 12.1, yojo - 6.56, 0);
 		glEnd();
 		break;
 	}
@@ -146,20 +148,20 @@ void CPersonaje::dibuja(float xojo, float yojo)
 
 void CPersonaje::ataque_fis(CPersonaje &p) {
 	float danio;
-	danio = m_iAtq_fis*(1-p.m_iDef_fis);
-	p.m_iSalud = p.m_iSalud - danio;
-	if (p.m_iSalud <= 0) {
-		p.m_iSalud = 0;
-		p.m_bDisp = 0;
+	if (sqrt(pow(m_Pos.x - p.getPos().x, 2) + pow(m_Pos.y - p.getPos().y, 2))<4) {
+		danio = m_iAtq_fis*(1 - p.m_iDef_fis);
+		p.m_iSalud = p.m_iSalud - danio;
+		if (p.m_iSalud <= 0) {
+			p.m_iSalud = 0;
+			p.m_bDisp = 0;
+		}
 	}
 }
 
 
 CPersonaje::CPersonaje(char* text, char* careto) :
 	textura(text, 3, 4, 50, false, 0, 0, 0, 0, 1),
-	cara(careto),
-	m_Pos(10, 10),
-	primeraPos(m_Pos)
+	cara(careto)
 {
 	textura.setCenter(0, 0);
 	textura.setSize(1, 1);
