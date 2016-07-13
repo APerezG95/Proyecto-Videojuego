@@ -10,6 +10,7 @@
 /*   \     /                                                       \     /   */
 /*    `---'                                                         `---'    */
 
+
 #include "CMapa.h"
 #include "CBasket.h"
 #include "CCordilleras.h"
@@ -63,20 +64,7 @@ void CMapa::tecla(unsigned char key)
 {
 	m_Board[PersonajeActivo]->actualizaPos();
 	switch (key)
-	{
-	/*case 'l':
-		x_ojo += 0.1f;
-		break;
-	case 'i':
-		y_ojo += 0.1f;
-		break;
-	case 'j':
-		x_ojo -= 0.1f;
-		break;
-	case 'k':
-		y_ojo -= 0.1f;
-		break;*/
-	
+	{	
 	case 'd':
 	{
 		MoverPersonaje('d');
@@ -103,38 +91,35 @@ void CMapa::tecla(unsigned char key)
 		{
 			if (turno)
 			{
-				if (PersonajeActivo > 2)
-					turno = !turno;
-
 				PersonajeActivo++;
 				m_Board[PersonajeActivo]->actualizaPosfinal();
 			}
+			if (PersonajeActivo == 3)
+			{
+				turno = false;
+			}
 		}
 		break;
-	}
-
 	case 't':
 	{
 		if (!turno)
 		{
-			MoverPersonaje('w');
-			if (CompruebaPos(m_Board[PersonajeActivo]->primeraPos))
-			{
-				if (PersonajeActivo == 5)
-				{
-					PersonajeActivo = 0;
-					turno = !turno;
-				}
-
-				PersonajeActivo++;
-				m_Board[PersonajeActivo]->actualizaPosfinal();
-			}
-			/*(dynamic_cast <CEnemigo *> (m_Board[PersonajeActivo]))->SeleccionObjetivo(*this);*/
+			//(dynamic_cast <CEnemigo*> (m_Board[PersonajeActivo]))->*this);
+			PersonajeActivo++;
 		}
+		if (PersonajeActivo == 6)
+		{
+			turno = true;
+			PersonajeActivo = 0;
+		}
+
+		break;
 	}
 
+	}
 
 	}
+
 }
 
 bool CMapa::CompruebaPos(CPosicion a)
@@ -379,3 +364,121 @@ void CMapa::MoverPersonaje(unsigned char key)
 	
 }
 
+
+//void CMapa::IA()
+//{
+//	int aux[3] = { 0,0,0 };                              //En este vector se almacenará los personajes
+//	int z = 0;										 //en orden de preferencia para el ataque
+//	bool ataque_realizado = false;
+//
+//	for (int i = 0; i <= 6; i++) {					//Guardo la posicion de los personajes en el tablero
+//		if (m_Board[i]->getm_bBando() == 1) {
+//			aux[++z] = i;
+//		}
+//
+//		for (int i = 0; i < 3; i++)					//Ordeno a los personajes en funcion de su vida, de menor a mayor
+//			for (int j = 0; j < 2; j++)
+//				if (m_Board[aux[j]]->getm_iSalud() > m_Board[aux[j + 1]]->getm_iSalud()) {
+//					int Temporal = aux[j];
+//					aux[j] = aux[j + 1];
+//					aux[j + 1] = Temporal;
+//				}
+//
+//		//El ataque fisico se propriza sobre el de habilidad
+//		//Solo se puede atacar una vez
+//		for (int i = 0; i < 3; i++) {
+//			if (!ataque_realizado) {
+//				bool posible_fis = false;
+//				bool posible_hab = false;
+//				if (sqrt(pow(m_Board[PersonajeActivo]->getPos().x - m_Board[aux[i]]->getPos().x, 2) + pow(m_Board[PersonajeActivo]->getPos().y - m_Board[aux[i]]->getPos().y, 2)) < 3) posible_fis = true;
+//				if (sqrt(pow(m_Board[PersonajeActivo]->getPos().x - m_Board[aux[i]]->getPos().x, 2) + pow(m_Board[PersonajeActivo]->getPos().y - m_Board[aux[i]]->getPos().y, 2)) < 10) posible_hab = true;
+//				if (posible_fis) {
+//					m_Board[PersonajeActivo]->ataque_fis(*(m_Board[aux[i]]));
+//					ataque_realizado = true;
+//				}
+//				if (ataque_realizado) continue;
+//				if (posible_hab)
+//					if (m_Board[PersonajeActivo]->ataque_hab(*(m_Board[aux[i]]))) ataque_realizado = true;
+//			}
+//		}
+//
+//		//Si ningún personaje se encontraba a rango el enemigo se mueve hacia el personaje que tenga menos vida
+//		CPosicion pos_aux;
+//
+//		if (!ataque_realizado) {
+//			for (int i = 0; i < 3; i++) {
+//				bool pos_ok = false;
+//				if (m_Board[aux[i]]->getPos().x < m_Board[PersonajeActivo]->getPos().x) {								//Si está a la derecha
+//					if (m_Board[aux[i]]->getPos().x >(m_Board[PersonajeActivo]->getPos().x + m_Board[PersonajeActivo]->m_iVel)) pos_aux.x = m_Board[aux[i]]->getPos().x;			//compruebo si moviendome el maximo le supero en x. Si le supero me quedo en su coordenada x, si no, me muevo lo maximo posible
+//					else pos_aux.x = m_Board[aux[i]]->getPos().x - m_Board[PersonajeActivo]->m_iVel;
+//				}
+//
+//				if (m_Board[aux[i]]->getPos().x > m_Board[PersonajeActivo]->getPos().x) {
+//					if (m_Board[aux[i]]->getPos().x < (m_Board[PersonajeActivo]->getPos().x + m_Board[PersonajeActivo]->m_iVel)) pos_aux.x = m_Board[aux[i]]->getPos().x;
+//					else pos_aux.x = m_Board[aux[i]]->getPos().x + m_Board[PersonajeActivo]->m_iVel;
+//				}
+//				if (m_Board[aux[i]]->getPos().y < m_Board[PersonajeActivo]->getPos().y) {
+//					if (m_Board[aux[i]]->getPos().y < (m_Board[PersonajeActivo]->getPos().y + m_Board[PersonajeActivo]->m_iVel)) pos_aux.y = m_Board[aux[i]]->getPos().y;
+//					else pos_aux.y = m_Board[aux[i]]->getPos().y - m_Board[PersonajeActivo]->m_iVel;
+//				}
+//
+//				if (m_Board[aux[i]]->getPos().y > m_Board[PersonajeActivo]->getPos().y) {
+//					if (m_Board[aux[i]]->getPos().y < (m_Board[PersonajeActivo]->getPos().y + m_Board[PersonajeActivo]->m_iVel)) pos_aux.y = m_Board[aux[i]]->getPos().y;
+//					else pos_aux.y = m_Board[aux[i]]->getPos().y + m_Board[PersonajeActivo]->m_iVel;
+//				}
+//				if (CompruebaPos(pos_aux)) pos_ok = true;
+//				if (pos_ok) break;
+//			}
+//		}
+//
+//		//Movimiento cuadrícula a cuadrícula
+//		if (!ataque_realizado) {
+//			do {
+//				bool mov_realizado = false;
+//				if (!mov_realizado) {
+//					if (pos_aux.x > m_Board[PersonajeActivo]->getPos().x) {
+//						MoverPersonaje('d');
+//						mov_realizado = true;
+//					}
+//				}
+//				if (!mov_realizado) {
+//					if (pos_aux.x < m_Board[PersonajeActivo]->getPos().x) {
+//						MoverPersonaje('a');
+//						mov_realizado = true;
+//					}
+//				}
+//				if (!mov_realizado) {
+//					if (pos_aux.y > m_Board[PersonajeActivo]->getPos().y) {
+//						MoverPersonaje('w');
+//						mov_realizado = true;
+//					}
+//				}
+//				if (!mov_realizado) {
+//					if (pos_aux.y > m_Board[PersonajeActivo]->getPos().y) {
+//						MoverPersonaje('s');
+//						mov_realizado = true;
+//					}
+//				}
+//			} while ((pos_aux.x != m_Board[PersonajeActivo]->getPos().x) && (pos_aux.y != m_Board[PersonajeActivo]->getPos().y));
+//		}
+//
+//		if (!ataque_realizado) {
+//			for (int i = 0; i < 3; i++) {
+//				if (!ataque_realizado) {
+//					bool posible_fis = false;
+//					bool posible_hab = false;
+//					if (sqrt(pow(m_Board[PersonajeActivo]->getPos().x - m_Board[aux[i]]->getPos().x, 2) + pow(m_Board[PersonajeActivo]->getPos().y - m_Board[aux[i]]->getPos().y, 2)) < 3) posible_fis = true;
+//					if (sqrt(pow(m_Board[PersonajeActivo]->getPos().x - m_Board[aux[i]]->getPos().x, 2) + pow(m_Board[PersonajeActivo]->getPos().y - m_Board[aux[i]]->getPos().y, 2)) < 10) posible_hab = true;
+//					if (posible_fis) {
+//						m_Board[PersonajeActivo]->ataque_fis(*m_Board[aux[i]]);
+//						ataque_realizado = true;
+//					}
+//					if (ataque_realizado) continue;
+//					if (posible_hab)
+//						if (m_Board[PersonajeActivo]->ataque_hab(*m_Board[aux[i]])) ataque_realizado = true;
+//				}
+//			}
+//		}
+//
+//	}
+//}

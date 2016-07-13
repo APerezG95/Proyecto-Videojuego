@@ -11,6 +11,7 @@
 /*    `---'                                                         `---'    */
 
 #pragma once
+#include "glut.h"
 #include "CPersonaje.h"
 #include "CHippie.h"
 #include "ETSIDI.h"
@@ -30,6 +31,7 @@ public:
 	bool turno;	//true aliados, false enemigos
 	bool CompruebaPos(CPosicion a);
 	bool compruebaPosProhib(CPosicion aux);
+	void IA();
 
 	CPosicion pos_prohib[400];
 	CPersonaje *m_Board[5];		//Definimos la matriz que contiene el mapa

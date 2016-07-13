@@ -10,6 +10,5 @@ public:
 	void Inicializa();
 	CEnemigo(char* text, char* careto);
 	~CEnemigo();
-	void SeleccionObjetivo(CMapa map);
 };
 

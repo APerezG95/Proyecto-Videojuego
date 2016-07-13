@@ -1,28 +1,19 @@
-﻿Build started 12/07/2016 13:43:15.
+﻿Build started 13/07/2016 1:49:50.
      1>Project "D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\Pang.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Ilib /Isrc /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"tmp\Debug\\" /Fd"tmp\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\CMapa.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Ilib /Isrc /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"tmp\Debug\\" /Fd"tmp\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\CEnemigo.cpp src\CMapa.cpp src\CPersonaje.cpp src\viejsa\Pang.cpp
          CMapa.cpp
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cmapa.cpp(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cmapa.cpp(107): warning C4552: '!': operator has no effect; expected operator with side-effect
-     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cmapa.cpp(130): warning C4552: '!': operator has no effect; expected operator with side-effect
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.lib" /MACHINE:X86 tmp\Debug\CBasket.obj
-         tmp\Debug\CCordilleras.obj
-         tmp\Debug\CDestruye.obj
-         tmp\Debug\CEmpollon.obj
-         tmp\Debug\CEnemigo.obj
-         tmp\Debug\CEtsidiante.obj
-         tmp\Debug\CHippie.obj
-         tmp\Debug\CMapa.obj
-         tmp\Debug\CPasota.obj
-         tmp\Debug\CPersonaje.obj
-         tmp\Debug\CTuno.obj
-         tmp\Debug\CVoley.obj
-         tmp\Debug\Pang.obj
-         Pang.vcxproj -> D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\bin\Pang.exe
-     1>Done Building Project "D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\Pang.vcxproj" (Build target(s)).
+     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(50): error C2381: 'exit': redefinition; __declspec(noreturn) differs
+         d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\lib\glut.h(146): note: see declaration of 'exit'
+         CEnemigo.cpp
+         Generating Code...
+         Compiling...
+         Pang.cpp
+         CPersonaje.cpp
+         Generating Code...
+     1>d:\cosas mega tochas de mario\universidad\programación\proyecto-videojuego\pang\src\cpersonaje.cpp(207): warning C4715: 'CPersonaje::orientacion': not all control paths return a value
+     1>Done Building Project "D:\Cosas Mega tochas de Mario\Universidad\Programación\Proyecto-Videojuego\Pang\Pang.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.25
+Time Elapsed 00:00:02.57
